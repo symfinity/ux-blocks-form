@@ -11,7 +11,7 @@ Initial public release of the UX Blocks Form bundle for Symfony: seventeen nativ
 
 ### Added
 
-- **Seventeen form roles** — `label`, `input`, `textarea`, `checkbox`, `radio`, `radio-group`, `select`, `switch`, `file-input`, `file-upload`, `input-group`, `fieldset`, `field`, `floating-field`, `range`, `form`, and `form-actions` with `blocks.*` fragment ids and `category: form` registry facet
+- **Seventeen form roles** — `label`, `input`, `textarea`, `checkbox`, `radio`, `radio-group`, `select`, `switch`, `file-input`, `file-upload`, `input-group`, `fieldset`, `field`, `floating-field`, `range`, `form`, and `form-actions` with `blocks.*` fragment ids
 - **Twig components** — `<twig:Label>`, `<twig:Input>`, `<twig:Textarea>`, `<twig:Checkbox>`, `<twig:Radio>`, `<twig:RadioGroup>`, `<twig:Select>`, `<twig:Switch>`, `<twig:FileInput>`, `<twig:FileUpload>`, `<twig:InputGroup>`, `<twig:Fieldset>`, `<twig:Field>`, `<twig:FloatingField>`, `<twig:Range>`, `<twig:Form>`, and `<twig:FormActions>`
 - **Field compound** — composition-language shell with label header, control slot, and hint or error footer (`data-ui-part` regions)
 - **FloatingField** — floating-label compound for text controls (not for wrapping `Select`)
@@ -23,16 +23,15 @@ Initial public release of the UX Blocks Form bundle for Symfony: seventeen nativ
 - **FileUpload** — hidden file input with button chrome and filename readout
 - **FormActions** — footer toolbar with `align`: `start`, `stretch`, or `end`
 - **InputGroup** — composes `<twig:Button>` from `symfinity/ux-blocks-core`
-- **Native interaction CSS** — compiled `nat` profile role styles under `assets/styles/` for AssetMapper consumers
+- **Native interaction CSS** — `nat` profile role styles for AssetMapper consumers
 - **Symfony integration**
   - Flex recipe `0.1` — bundle registered for all environments; default routes copied from package
   - Twig namespace `UxBlocksForm` for `templates/components/`
 - **Compatibility** — PHP 8.2+; Symfony 7.4 and 8.x; requires `symfinity/ux-blocks-core` `^0.1`
-- **PHPUnit** — role render, CSS, and composition coverage for shipped form roles
+- **Handbook** — consumer docs under `docs/`
 
 ### Notes
 
 - `button` and `button-group` remain in `symfinity/ux-blocks-core` — not duplicated in this package
-- Theme tokens are not required at install time; pair with `symfinity/ui-kernel` when you need design-system CSS variables
+- Pair with `symfinity/ui-kernel` when you need design-system CSS variables
 - Optional Symfony Form bridge: `symfinity/form-ui-extensions-bundle` (FormView vars and field widgets)
-- With `symfinity/ux-blocks-kiosk` installed, browse form roles at `GET /kiosk/blocks/form`

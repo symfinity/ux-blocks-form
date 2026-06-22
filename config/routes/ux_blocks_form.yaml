@@ -1,1 +1,1 @@
-# symfinity/ux-blocks-form — no HTTP routes in Stage A (showroom in ux-blocks-kiosk)
+# symfinity/ux-blocks-form — no public HTTP routes (components render in app templates only)

@@ -17,7 +17,7 @@ final class Configuration implements ConfigurationInterface
         $root
             ->children()
                 ->booleanNode('fragment_ids')
-                    ->info('Emit data-ui-fragment from ux_roles.yaml (Stage B+). Stage A default: false.')
+                    ->info('Emit data-ui-fragment attributes from the package role registry.')
                     ->defaultFalse()
                 ->end()
             ->end();

@@ -759,10 +759,10 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     },
  * }
  * @psalm-type SymfinityUxBlocksCoreConfig = array{
- *     fragment_ids?: bool|Param, // Emit data-ui-fragment from ux_roles.yaml (Stage B+). Stage A default: false. // Default: false
+ *     fragment_ids?: bool|Param, // Emit data-ui-fragment attributes from the package role registry. // Default: false
  * }
  * @psalm-type SymfinityUxBlocksFormConfig = array{
- *     fragment_ids?: bool|Param, // Emit data-ui-fragment from ux_roles.yaml (Stage B+). Stage A default: false. // Default: false
+ *     fragment_ids?: bool|Param, // Emit data-ui-fragment attributes from the package role registry. // Default: false
  * }
  * @psalm-type ConfigType = array{
  *     imports?: ImportsConfig,

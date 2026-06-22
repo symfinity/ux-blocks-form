@@ -30,7 +30,7 @@ final class SymfinityUxBlocksFormBundle extends Bundle
 
     public function configureRoutes(RoutingConfigurator $routes): void
     {
-        // Stage A: no catalog routes — showroom lives in symfinity/ux-blocks-kiosk (110).
+        // No public HTTP routes — form components render in application templates.
     }
 
     public function configureTwig(TwigConfigurator $configurator): void

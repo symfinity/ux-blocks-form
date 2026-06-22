@@ -25,7 +25,7 @@ When using this bundle:
 
 1. Keep Symfony, `symfinity/ux-blocks-core`, `symfinity/ui-kernel`, and other dependencies updated
 2. Validate and sanitize all user input rendered through form components — this package provides markup and CSS, not server-side validation
-3. When pairing with `symfinity/ux-blocks-kiosk`, treat showroom routes (`/kiosk/blocks/form`) as dev or internal tooling — do not expose without authentication in production
+3. Use Symfony Form or your application's validation layer for server-side constraints — do not rely on client markup alone
 
 ## Security contact
 
