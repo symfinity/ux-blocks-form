@@ -4,19 +4,16 @@ declare(strict_types=1);
 
 namespace Symfinity\UxBlocksForm\Registry;
 
-use Symfinity\UxBlocks\Registry\TierCatalog;
-use Symfinity\UxBlocks\Registry\UxRoleRecord;
-
 final class UxRoleRegistry
 {
-    private TierCatalog $catalog;
+    private FormRoleCatalog $catalog;
 
     public function __construct(string $yamlPath)
     {
-        $this->catalog = TierCatalog::fromYamlFile($yamlPath);
+        $this->catalog = FormRoleCatalog::fromYamlFile($yamlPath);
     }
 
-    public function findByTwigComponent(string $twigComponent): ?UxRoleRecord
+    public function findByTwigComponent(string $twigComponent): ?FormRoleRecord
     {
         return $this->catalog->findByTwigComponent($twigComponent);
     }
@@ -31,11 +28,11 @@ final class UxRoleRegistry
      */
     public function rootTwigComponents(): array
     {
-        return array_map(static fn (UxRoleRecord $role) => $role->twigComponent, $this->catalog->roles);
+        return array_map(static fn (FormRoleRecord $role) => $role->twigComponent, $this->catalog->roles);
     }
 
     /**
-     * @return list<UxRoleRecord>
+     * @return list<FormRoleRecord>
      */
     public function roles(): array
     {

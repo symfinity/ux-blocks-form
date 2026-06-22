@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Symfinity\UxBlocksForm;
 
 use Symfony\Bundle\TwigBundle\DependencyInjection\Configurator\TwigConfigurator;
+use Symfinity\UxBlocksForm\DependencyInjection\Compiler\RegisterOptionalUxIconExtensionPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
@@ -26,6 +27,7 @@ final class SymfinityUxBlocksFormBundle extends Bundle
     {
         parent::build($container);
         $container->setParameter('ux_blocks_form.package_dir', $this->getPath());
+        $container->addCompilerPass(new RegisterOptionalUxIconExtensionPass());
     }
 
     public function configureRoutes(RoutingConfigurator $routes): void

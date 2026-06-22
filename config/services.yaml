@@ -8,6 +8,7 @@ services:
     exclude:
       - '../src/SymfinityUxBlocksFormBundle.php'
       - '../src/DependencyInjection/'
+      - '../src/Twig/OptionalUxIconExtension.php'
 
   Symfinity\UxBlocksForm\Css\BlocksFormCssProvider:
     arguments:

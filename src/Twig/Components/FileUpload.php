@@ -6,7 +6,7 @@ namespace Symfinity\UxBlocksForm\Twig\Components;
 
 use Symfinity\UiKernel\Token\ColourPropsNormalizer;
 use Symfinity\UxBlocksCore\Twig\ExposesSemanticVariant;
-use Symfinity\UxBlocksCore\Twig\NormalizesSemanticColourVariant;
+use Symfinity\UxBlocksForm\Twig\Components\Concerns\NormalizesSemanticColourVariant;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 use Symfony\UX\TwigComponent\Attribute\ExposeInTemplate;
 use Symfony\UX\TwigComponent\Attribute\PostMount;

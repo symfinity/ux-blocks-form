@@ -4,7 +4,7 @@
     data-ui-icon-position="{{ input_icon_position }}"
 >
     {% if input_icon_position == 'start' %}
-        {% include '@UxBlocksCore/components/_shared/p_icon_slot.html.twig' with {
+        {% include '@UxBlocksForm/components/_shared/p_icon_slot.html.twig' with {
             iconName: resolved_input_icon,
             iconDecorative: iconDecorative,
         } only %}
@@ -19,7 +19,7 @@
         type="{{ type }}"
     />
     {% if input_icon_position == 'end' %}
-        {% include '@UxBlocksCore/components/_shared/p_icon_slot.html.twig' with {
+        {% include '@UxBlocksForm/components/_shared/p_icon_slot.html.twig' with {
             iconName: resolved_input_icon,
             iconDecorative: iconDecorative,
         } only %}

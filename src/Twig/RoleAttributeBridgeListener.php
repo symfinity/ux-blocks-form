@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Symfinity\UxBlocksForm\Twig;
 
-use Symfinity\UxBlocks\Registry\UxRoleRecord;
+use Symfinity\UxBlocksForm\Registry\FormRoleRecord;
 use Symfinity\UxBlocksForm\Registry\UxRoleRegistry;
 use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 use Symfony\UX\TwigComponent\ComponentAttributes;
@@ -43,7 +43,7 @@ final class RoleAttributeBridgeListener
         $event->setVariables($variables);
     }
 
-    private function resolveFragmentId(UxRoleRecord $record, object $component): string
+    private function resolveFragmentId(FormRoleRecord $record, object $component): string
     {
         if (property_exists($component, 'fragmentSuffix')) {
             $suffix = $component->fragmentSuffix ?? null;

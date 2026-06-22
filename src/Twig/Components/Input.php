@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Symfinity\UxBlocksForm\Twig\Components;
 
 use Symfinity\UiKernel\Token\ColourPropsNormalizer;
-use Symfinity\UxBlocksCore\Twig\ResolvesExplicitIcon;
+use Symfinity\UxBlocksForm\Twig\Components\Concerns\ResolvesExplicitIcon;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 use Symfony\UX\TwigComponent\Attribute\ExposeInTemplate;
 use Symfony\UX\TwigComponent\Attribute\PostMount;

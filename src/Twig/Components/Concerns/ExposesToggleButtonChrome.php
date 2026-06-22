@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Symfinity\UxBlocksForm\Twig\Components\Concerns;
 
-use Symfinity\UxBlocksCore\Twig\NormalizesControlSize;
 use Symfony\UX\TwigComponent\Attribute\ExposeInTemplate;
 
 /**

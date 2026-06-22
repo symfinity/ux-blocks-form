@@ -74,8 +74,11 @@ final class ToggleButtonCssTest extends TestCase
     #[Test]
     public function coreButtonGroupUsesVisibleButtonSiblingSelectors(): void
     {
-        $path = dirname(__DIR__, 4) . '/ux-blocks-core/assets/styles/roles/button-group.css';
-        self::assertFileExists($path);
+        $ref = new \ReflectionClass(\Symfinity\UxBlocksCore\SymfinityUxBlocksCoreBundle::class);
+        $path = \dirname($ref->getFileName(), 2) . '/assets/styles/roles/button-group.css';
+        if (!is_file($path)) {
+            self::markTestSkipped('symfinity/ux-blocks-core button-group.css is not available in this install.');
+        }
 
         $css = (string) file_get_contents($path);
 

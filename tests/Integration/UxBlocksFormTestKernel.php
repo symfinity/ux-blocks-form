@@ -7,6 +7,7 @@ namespace Symfinity\UxBlocksForm\Tests\Integration;
 use Symfinity\UiKernel\UiKernelBundle;
 use Symfinity\UxBlocksCore\SymfinityUxBlocksCoreBundle;
 use Symfinity\UxBlocksForm\SymfinityUxBlocksFormBundle;
+use Symfinity\UxBlocksForm\Twig\OptionalUxIconExtension;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Bundle\TwigBundle\TwigBundle;
@@ -98,7 +99,16 @@ final class UxBlocksFormTestKernel extends Kernel
         $container->services()
             ->set('twig.extension.form', StubFormTwigExtension::class)
             ->tag('twig.extension')
-            ->public()
+            ->public();
+
+        if (!class_exists(\Symfinity\UxBlocksCore\Twig\OptionalUxIconExtension::class)) {
+            $container->services()
+                ->set(OptionalUxIconExtension::class)
+                ->tag('twig.extension')
+                ->public();
+        }
+
+        $container->services()
             ->load('Symfinity\\UxBlocksForm\\Tests\\Integration\\Controller\\', '%kernel.project_dir%/tests/Integration/Controller/')
             ->autowire()
             ->autoconfigure()

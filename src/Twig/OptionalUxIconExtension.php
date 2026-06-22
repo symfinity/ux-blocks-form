@@ -1,0 +1,48 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Symfinity\UxBlocksForm\Twig;
+
+use Twig\Environment;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
+
+/**
+ * Registers {@code ux_blocks_icon} when symfinity/ux-blocks-core has not shipped
+ * {@see \Symfinity\UxBlocksCore\Twig\OptionalUxIconExtension} yet.
+ */
+final class OptionalUxIconExtension extends AbstractExtension
+{
+    public function getFunctions(): array
+    {
+        return [
+            new TwigFunction('ux_blocks_icon', $this->renderIcon(...), [
+                'is_safe' => ['html'],
+                'needs_environment' => true,
+            ]),
+        ];
+    }
+
+    public function renderIcon(Environment $env, ?string $name): string
+    {
+        $name = null === $name ? '' : trim($name);
+        if ('' === $name) {
+            return '';
+        }
+
+        if (null === $env->getFunction('ux_icon')) {
+            return '';
+        }
+
+        if (class_exists(\Symfony\UX\Icons\Twig\UXIconRuntime::class)) {
+            $result = $env->getRuntime(\Symfony\UX\Icons\Twig\UXIconRuntime::class)->renderIcon($name);
+
+            return \is_string($result) ? $result : '';
+        }
+
+        return trim($env->createTemplate('{% apply spaceless %}{{ ux_icon(icon) }}{% endapply %}')->render([
+            'icon' => $name,
+        ]));
+    }
+}
