@@ -1,6 +1,6 @@
 {
     "name": "symfinity/ux-blocks-form",
-    "description": "Form domain Twig components — labels, inputs, compounds, and native interaction CSS",
+    "description": "Form domain Twig components: labels, inputs, compounds, and native interaction CSS",
     "type": "symfony-bundle",
     "license": "MIT",
     "homepage": "https://github.com/symfinity/ux-blocks-form",

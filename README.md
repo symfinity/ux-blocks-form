@@ -2,7 +2,7 @@
 
 # UX Blocks Form
 
-### Form domain Twig components — labels, inputs, compounds, and native interaction CSS
+### Form domain Twig components: labels, inputs, compounds, and native interaction CSS
 
 [![PHP Version](https://img.shields.io/badge/PHP-8.2+-777BB4?style=flat&logo=php&logoColor=white)](composer.json)
 [![Symfony](https://img.shields.io/badge/Symfony-7.4+-343434?style=flat&logo=symfony&logoColor=white)](composer.json)
