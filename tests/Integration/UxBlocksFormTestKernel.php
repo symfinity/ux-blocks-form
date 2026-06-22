@@ -85,9 +85,6 @@ final class UxBlocksFormTestKernel extends Kernel
 
         $container->extension('twig', [
             'form_themes' => [],
-            'paths' => [
-                '%kernel.project_dir%/tests/templates' => null,
-            ],
         ]);
 
         $container->services()
