@@ -17,7 +17,7 @@ final class FormTest extends ComponentTestCase
         $this->assertRootAttributes($html, 'form', 'blocks.form');
         self::assertStringContainsString('<form', $html);
         self::assertStringContainsString('method="post"', $html);
-        self::assertStringContainsString('data-ui-part="title"', $html);
+        self::assertStringContainsString('data-ui-part="header"', $html);
         self::assertStringContainsString('Sign in', $html);
     }
 }

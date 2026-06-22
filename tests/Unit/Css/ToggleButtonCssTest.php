@@ -79,7 +79,7 @@ final class ToggleButtonCssTest extends TestCase
 
         $css = (string) file_get_contents($path);
 
-        self::assertStringContainsString('[data-ui-role="button"] ~ [data-ui-role="button"]', $css);
+        self::assertStringContainsString('[data-ui-role=button] ~ [data-ui-role=button]', $css);
         self::assertStringContainsString(':not(:last-of-type)', $css);
         self::assertStringNotContainsString(':not(:first-child)', $css);
     }

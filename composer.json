@@ -1,6 +1,6 @@
 {
     "name": "symfinity/ux-blocks-form",
-    "description": "Form-domain UX Twig components — labels, inputs, field compounds, and role CSS",
+    "description": "Form domain Twig components — labels, inputs, compounds, and native interaction CSS",
     "type": "symfony-bundle",
     "license": "MIT",
     "homepage": "https://github.com/symfinity/ux-blocks-form",
@@ -43,29 +43,12 @@
         "phpstan/phpstan": "^2.1",
         "phpstan/phpstan-symfony": "^2.0",
         "phpunit/phpunit": "^10.5 || ^11.0",
-        "symfinity/ui-kernel": "@dev",
+        "symfinity/ui-kernel": "^0.2",
         "symfony/browser-kit": "^7.4||^8.0",
         "symfony/css-selector": "^7.4||^8.0",
         "symfony/form": "^7.4||^8.0",
         "symfony/validator": "^7.4||^8.0"
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../ux-blocks",
-            "options": { "symlink": true }
-        },
-        {
-            "type": "path",
-            "url": "../ux-blocks-core",
-            "options": { "symlink": true }
-        },
-        {
-            "type": "path",
-            "url": "../ui-kernel",
-            "options": { "symlink": true }
-        }
-    ],
     "autoload": {
         "psr-4": {
             "Symfinity\\UxBlocksForm\\": "src/"

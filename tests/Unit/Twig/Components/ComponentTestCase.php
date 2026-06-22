@@ -57,4 +57,11 @@ abstract class ComponentTestCase extends KernelTestCase
         }
         self::assertDoesNotMatchRegularExpression('/html_cva|tailwind_merge|twig-tailwind-extra/', $html);
     }
+
+    protected function tearDown(): void
+    {
+        parent::tearDown();
+
+        restore_exception_handler();
+    }
 }

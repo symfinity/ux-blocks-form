@@ -10,6 +10,8 @@ use Symfony\UX\TwigComponent\Attribute\ExposeInTemplate;
 #[AsTwigComponent('FloatingField', template: '@UxBlocksForm/components/FloatingField.html.twig')]
 final class FloatingField
 {
+    private static int $controlSequence = 0;
+
     public ?string $label = null;
 
     public ?string $error = null;
@@ -29,8 +31,7 @@ final class FloatingField
     public function mount(string $controlId = ''): void
     {
         if ('' === $controlId) {
-            static $sequence = 0;
-            $this->controlId = 'floating-control-' . (++$sequence);
+            $this->controlId = 'floating-control-' . (++self::$controlSequence);
         } else {
             $this->controlId = $controlId;
         }

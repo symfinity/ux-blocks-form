@@ -4,7 +4,7 @@
 >
     {% block content %}{% endblock %}
     {% if label %}
-        <label for="{{ controlId }}" id="{{ labelId }}">{{ label }}</label>
+        <label data-ui-part="label" for="{{ controlId }}" id="{{ labelId }}">{{ label }}</label>
     {% endif %}
     {% if error %}
         <p data-ui-part="footer" id="{{ errorId }}" role="alert">{{ error }}</p>

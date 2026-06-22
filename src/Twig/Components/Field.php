@@ -10,6 +10,8 @@ use Symfony\UX\TwigComponent\Attribute\ExposeInTemplate;
 #[AsTwigComponent('Field', template: '@UxBlocksForm/components/Field.html.twig')]
 final class Field
 {
+    private static int $controlSequence = 0;
+
     private string $orientation = 'vertical';
 
     public ?string $label = null;
@@ -37,8 +39,7 @@ final class Field
         }
 
         if ('' === $controlId) {
-            static $sequence = 0;
-            $this->controlId = 'field-control-' . (++$sequence);
+            $this->controlId = 'field-control-' . (++self::$controlSequence);
         } else {
             $this->controlId = $controlId;
         }
