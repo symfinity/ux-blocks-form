@@ -13,7 +13,6 @@ use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Bundle\TwigBundle\TwigBundle;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\HttpKernel\Kernel;
-use Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
 use Symfony\UX\StimulusBundle\StimulusBundle;
 use Symfony\UX\TwigComponent\TwigComponentBundle;
 
@@ -44,11 +43,6 @@ final class UxBlocksFormTestKernel extends Kernel
             new SymfinityUxBlocksCoreBundle(),
             new SymfinityUxBlocksFormBundle(),
         ];
-    }
-
-    protected function configureRoutes(RoutingConfigurator $routes): void
-    {
-        $routes->import($this->getProjectDir() . '/tests/Integration/Controller/', 'attribute');
     }
 
     protected function configureContainer(ContainerConfigurator $container): void
@@ -107,11 +101,5 @@ final class UxBlocksFormTestKernel extends Kernel
                 ->tag('twig.extension')
                 ->public();
         }
-
-        $container->services()
-            ->load('Symfinity\\UxBlocksForm\\Tests\\Integration\\Controller\\', '%kernel.project_dir%/tests/Integration/Controller/')
-            ->autowire()
-            ->autoconfigure()
-            ->public();
     }
 }
