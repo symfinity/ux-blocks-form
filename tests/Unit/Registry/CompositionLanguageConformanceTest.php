@@ -7,14 +7,46 @@ namespace Symfinity\UxBlocksForm\Tests\Unit\Registry;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Symfinity\UxBlocks\Registry\CompositionLanguageRegistryAuditor;
+use Symfinity\UxBlocks\Registry\ConformanceViolation;
 use Symfinity\UxBlocks\Registry\LanguageConformance;
 use Symfinity\UxBlocks\Registry\RoleLanguageDefinition;
-use Symfinity\UxBlocks\Test\ConformanceAssertions;
 use Symfony\Component\Yaml\Yaml;
 
 final class CompositionLanguageConformanceTest extends TestCase
 {
-    use ConformanceAssertions;
+    public static function setUpBeforeClass(): void
+    {
+        if (!class_exists(LanguageConformance::class)) {
+            self::markTestSkipped('symfinity/ux-blocks composition-language utilities are not available in this install.');
+        }
+    }
+
+    protected function assertRoleDefinitionConformant(RoleLanguageDefinition $def): void
+    {
+        self::assertNoConformanceFailures(LanguageConformance::checkRoleDefinition($def), $def->role);
+    }
+
+    /**
+     * @param list<string> $roleIds
+     */
+    protected function assertNoCompoundRoles(array $roleIds): void
+    {
+        self::assertNoConformanceFailures(LanguageConformance::checkNoCompoundRoles($roleIds), '(catalog)');
+    }
+
+    /**
+     * @param list<ConformanceViolation> $violations
+     */
+    private static function assertNoConformanceFailures(array $violations, string $context): void
+    {
+        $failures = LanguageConformance::failuresOnly($violations);
+
+        self::assertSame(
+            [],
+            array_map(static fn (ConformanceViolation $v): string => $v->describe(), $failures),
+            sprintf('Composition-language conformance failed for %s', $context),
+        );
+    }
 
     /** @return list<array<string, mixed>> */
     private static function roleRows(): array

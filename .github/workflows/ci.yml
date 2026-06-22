@@ -38,6 +38,18 @@ jobs:
           coverage: none
           tools: composer:v2
 
+      # Packagist v0.1.0 of ux-blocks-core/ui-kernel predates form-tier APIs — resolve siblings from mirrors until tags catch up.
+      - name: Resolve Symfinity siblings from GitHub mirrors
+        run: |
+          for repo in ux-blocks ux-blocks-core ui-kernel ui-action; do
+            composer config "repositories.symfinity-${repo}" "{\"type\":\"vcs\",\"url\":\"https://github.com/symfinity/${repo}\"}"
+          done
+          composer require --no-update \
+            'symfinity/ux-blocks:dev-main' \
+            'symfinity/ux-blocks-core:dev-main' \
+            'symfinity/ui-kernel:^0.1' \
+            'symfinity/ui-action:dev-main'
+
       - name: Pin Symfony ${{ matrix.symfony }}
         run: |
           composer require --no-update \

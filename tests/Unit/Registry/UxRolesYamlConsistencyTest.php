@@ -6,11 +6,34 @@ namespace Symfinity\UxBlocksForm\Tests\Unit\Registry;
 
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use Symfinity\UxBlocks\Registry\FormRoleCatalog;
 use Symfony\Component\Yaml\Yaml;
 
 final class UxRolesYamlConsistencyTest extends TestCase
 {
+    /** @return list<string> */
+    private static function canonicalRoleIds(): array
+    {
+        return [
+            'label',
+            'input',
+            'textarea',
+            'checkbox',
+            'radio-group',
+            'select',
+            'switch',
+            'file-input',
+            'input-group',
+            'fieldset',
+            'field',
+            'floating-field',
+            'range',
+            'radio',
+            'form',
+            'form-actions',
+            'file-upload',
+        ];
+    }
+
     #[Test]
     public function yamlSchemaMatchesContract(): void
     {
@@ -19,7 +42,7 @@ final class UxRolesYamlConsistencyTest extends TestCase
         self::assertSame('1.4', $registry['ux_role_registry']);
         self::assertSame('blocks', $registry['registry_prefix']);
         self::assertCount(17, $registry['roles']);
-        self::assertSame(FormRoleCatalog::roles(), array_column($registry['roles'], 'role'));
+        self::assertSame(self::canonicalRoleIds(), array_column($registry['roles'], 'role'));
     }
 
     #[Test]
