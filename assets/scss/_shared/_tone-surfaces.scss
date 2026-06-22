@@ -1,0 +1,13 @@
+@use 'lists' as *;
+
+@mixin each-variant-tone-var($var-name) {
+  @each $colour in $ui-semantic-colours {
+    &[data-ui-variant='#{$colour}'] {
+      #{$var-name}: var(--ui-color-#{$colour});
+    }
+  }
+}
+
+@mixin each-variant-toggle-accent() {
+  @include each-variant-tone-var(--ui-toggle-accent);
+}

@@ -1,0 +1,28 @@
+<div
+    {% if invalid %}data-ui-state="invalid"{% elseif disabled %}data-ui-state="disabled"{% endif %}
+    {{ attributes }}
+>
+    <input
+        type="file"
+        id="{{ id }}"
+        data-ui-part="control"
+        {% if multiple %}multiple{% endif %}
+        {% if accept %}accept="{{ accept }}"{% endif %}
+        {% if required %}required{% endif %}
+        {% if invalid %}aria-invalid="true"{% endif %}
+        {% if disabled %}disabled data-ui-state="disabled"{% elseif invalid %}data-ui-state="invalid"{% endif %}
+    />
+    <label
+        for="{{ id }}"
+        data-ui-role="button"
+        data-ui-variant="{{ normalized_variant }}"
+        data-ui-appearance="solid"
+        {% if disabled %}data-ui-state="disabled"{% endif %}
+    >
+        <span data-ui-part="label">{{ buttonLabel }}</span>
+    </label>
+    <span data-ui-part="filename" aria-live="polite">
+        <span data-ui-part="filename-empty">No file chosen</span>
+        <span data-ui-part="filename-selected">File selected</span>
+    </span>
+</div>

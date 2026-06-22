@@ -1,0 +1,14 @@
+<div
+    {% if invalid or error %}data-ui-state="invalid"{% endif %}
+    {{ attributes }}
+>
+    {% block content %}{% endblock %}
+    {% if label %}
+        <label for="{{ controlId }}" id="{{ labelId }}">{{ label }}</label>
+    {% endif %}
+    {% if error %}
+        <p data-ui-part="footer" id="{{ errorId }}" role="alert">{{ error }}</p>
+    {% elseif hint %}
+        <p data-ui-part="footer" id="{{ hintId }}">{{ hint }}</p>
+    {% endif %}
+</div>

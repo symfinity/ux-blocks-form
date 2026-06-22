@@ -1,0 +1,14 @@
+/* generated: blocks-css:compile — do not edit */
+
+[data-ui-role="radio-group"] {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-space-sm);
+  font-family: var(--ui-font-family-sans);
+}
+
+[data-ui-role="radio-group"][data-ui-orientation=horizontal] {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}

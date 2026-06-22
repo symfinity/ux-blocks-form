@@ -1,0 +1,207 @@
+ux_role_registry: "1.4"
+registry_prefix: blocks
+roles:
+  - role: label
+    twig_component: Label
+    php_class: Symfinity\UxBlocksForm\Twig\Components\Label
+    fragment_id: blocks.label
+    fragment_pattern: "blocks.label.{n}"
+    category: form
+    subcategory: control
+    interaction: nat
+    stage: A
+    status: v0
+  - role: input
+    twig_component: Input
+    php_class: Symfinity\UxBlocksForm\Twig\Components\Input
+    fragment_id: blocks.input
+    fragment_pattern: "blocks.input.{n}"
+    attributes: [size, disabled, invalid]
+    scalar_content: [icon]
+    styled_parts: []
+    category: form
+    subcategory: control
+    interaction: nat
+    stage: A
+    status: v0
+    icon_slot:
+      position: start | end
+  - role: textarea
+    twig_component: Textarea
+    php_class: Symfinity\UxBlocksForm\Twig\Components\Textarea
+    fragment_id: blocks.textarea
+    fragment_pattern: "blocks.textarea.{n}"
+    category: form
+    subcategory: control
+    interaction: nat
+    stage: A
+    status: v0
+  - role: checkbox
+    twig_component: Checkbox
+    php_class: Symfinity\UxBlocksForm\Twig\Components\Checkbox
+    fragment_id: blocks.checkbox
+    fragment_pattern: "blocks.checkbox.{n}"
+    category: form
+    subcategory: control
+    interaction: nat
+    stage: A
+    status: v0
+  - role: radio-group
+    twig_component: RadioGroup
+    php_class: Symfinity\UxBlocksForm\Twig\Components\RadioGroup
+    fragment_id: blocks.radio-group
+    fragment_pattern: "blocks.radio-group.{n}"
+    nested_components:
+      - RadioGroup:Item
+    category: form
+    subcategory: control
+    interaction: nat
+    stage: A
+    status: v0
+  - role: select
+    twig_component: Select
+    php_class: Symfinity\UxBlocksForm\Twig\Components\Select
+    fragment_id: blocks.select
+    fragment_pattern: "blocks.select.{n}"
+    category: form
+    subcategory: control
+    interaction: nat
+    stage: A
+    status: v0
+  - role: switch
+    twig_component: Switch
+    php_class: Symfinity\UxBlocksForm\Twig\Components\SwitchControl
+    fragment_id: blocks.switch
+    fragment_pattern: "blocks.switch.{n}"
+    category: form
+    subcategory: control
+    interaction: nat
+    stage: A
+    status: v1
+  - role: file-input
+    twig_component: FileInput
+    php_class: Symfinity\UxBlocksForm\Twig\Components\FileInput
+    fragment_id: blocks.file-input
+    fragment_pattern: "blocks.file-input.{n}"
+    category: form
+    subcategory: control
+    interaction: nat
+    stage: A
+    status: v1
+  - role: input-group
+    twig_component: InputGroup
+    php_class: Symfinity\UxBlocksForm\Twig\Components\InputGroup
+    fragment_id: blocks.input-group
+    fragment_pattern: "blocks.input-group.{n}"
+    category: form
+    subcategory: layout
+    interaction: nat
+    stage: A
+    status: v1
+  - role: fieldset
+    twig_component: Fieldset
+    php_class: Symfinity\UxBlocksForm\Twig\Components\Fieldset
+    fragment_id: blocks.fieldset
+    fragment_pattern: "blocks.fieldset.{n}"
+    category: form
+    subcategory: layout
+    interaction: nat
+    stage: A
+    status: v1
+  - role: field
+    twig_component: Field
+    php_class: Symfinity\UxBlocksForm\Twig\Components\Field
+    fragment_id: blocks.field
+    fragment_pattern: "blocks.field.{n}"
+    attributes: [invalid]
+    scalar_content: [label, error, hint]
+    styled_parts: [header, footer]
+    composition_language: enforced
+    a11y:
+      describedby: [error, hint]
+      labelledby: [label]
+    category: form
+    subcategory: compound
+    interaction: nat
+    stage: A
+    status: shipped
+
+  - role: floating-field
+    twig_component: FloatingField
+    php_class: Symfinity\UxBlocksForm\Twig\Components\FloatingField
+    fragment_id: blocks.floating-field
+    fragment_pattern: "blocks.floating-field.{n}"
+    attributes: [invalid]
+    scalar_content: [label, error, hint]
+    styled_parts: [footer]
+    category: form
+    subcategory: compound
+    interaction: nat
+    stage: A
+    status: v1
+
+  - role: range
+    twig_component: Range
+    php_class: Symfinity\UxBlocksForm\Twig\Components\Range
+    fragment_id: blocks.range
+    fragment_pattern: "blocks.range.{n}"
+    attributes: [disabled]
+    category: form
+    subcategory: control
+    interaction: nat
+    stage: A
+    status: v1
+
+  - role: radio
+    twig_component: Radio
+    php_class: Symfinity\UxBlocksForm\Twig\Components\Radio
+    fragment_id: blocks.radio
+    fragment_pattern: "blocks.radio.{n}"
+    scalar_content: [label]
+    category: form
+    subcategory: control
+    interaction: nat
+    stage: A
+    status: v1
+
+  - role: form
+    twig_component: Form
+    php_class: Symfinity\UxBlocksForm\Twig\Components\Form
+    fragment_id: blocks.form
+    fragment_pattern: "blocks.form.{n}"
+    scalar_content: [title]
+    styled_parts: [header, footer]
+    category: form
+    subcategory: layout
+    interaction: nat
+    stage: A
+    status: v1
+
+  - role: form-actions
+    twig_component: FormActions
+    php_class: Symfinity\UxBlocksForm\Twig\Components\FormActions
+    fragment_id: blocks.form-actions
+    fragment_pattern: "blocks.form-actions.{n}"
+    category: form
+    subcategory: layout
+    interaction: nat
+    stage: A
+    status: v1
+
+  - role: file-upload
+    twig_component: FileUpload
+    php_class: Symfinity\UxBlocksForm\Twig\Components\FileUpload
+    fragment_id: blocks.file-upload
+    fragment_pattern: "blocks.file-upload.{n}"
+    attributes: [disabled, invalid]
+    scalar_content: [buttonLabel]
+    category: form
+    subcategory: control
+    interaction: nat
+    stage: A
+    status: v1
+
+deprecated_fragment_aliases:
+  - from: blocks.ext.field
+    to: blocks.field
+    sunset: next-minor

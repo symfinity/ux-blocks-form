@@ -1,0 +1,8 @@
+<fieldset
+    {{ attributes }}
+>
+    {% if legend %}
+    <legend>{{ legend }}</legend>
+    {% endif %}
+    {% block content %}{% endblock %}
+</fieldset>

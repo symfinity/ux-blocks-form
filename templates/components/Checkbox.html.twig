@@ -1,0 +1,29 @@
+{% if is_button_appearance %}
+<input
+    type="checkbox"
+    id="{{ id }}"
+    data-ui-appearance="button"
+    data-ui-variant="{{ semantic_variant }}"
+    {% if checked %}checked{% endif %}
+    {% if disabled %}disabled data-ui-state="disabled"{% endif %}
+    {{ attributes }}
+/>
+<label
+    for="{{ id }}"
+    data-ui-role="button"
+    data-ui-variant="{{ semantic_variant }}"
+    data-ui-appearance="{{ label_button_style }}"
+    data-ui-size="{{ size }}"
+    {% if disabled %}data-ui-state="disabled"{% endif %}
+>
+    <span data-ui-part="label">{{ label }}</span>
+</label>
+{% else %}
+<input
+    data-ui-variant="{{ semantic_variant }}"
+    type="checkbox"
+    {% if checked %}checked{% endif %}
+    {% if disabled %}disabled data-ui-state="disabled"{% endif %}
+    {{ attributes }}
+/>
+{% endif %}

@@ -1,0 +1,43 @@
+{% if is_button_appearance %}
+<input
+    type="radio"
+    id="{{ id }}"
+    data-ui-role="radio"
+    data-ui-appearance="button"
+    data-ui-variant="{{ semantic_variant }}"
+    name="{{ name }}"
+    value="{{ value }}"
+    {% if checked %}checked{% endif %}
+    {% if disabled %}disabled data-ui-state="disabled"{% endif %}
+    {{ attributes }}
+/>
+<label
+    for="{{ id }}"
+    data-ui-role="button"
+    data-ui-variant="{{ semantic_variant }}"
+    data-ui-appearance="{{ label_button_style }}"
+    data-ui-size="{{ size }}"
+    {% if disabled %}data-ui-state="disabled"{% endif %}
+>
+    <span data-ui-part="label">{{ label }}</span>
+</label>
+{% else %}
+<label
+    {{ attributes }}
+>
+    <input
+        type="radio"
+        data-ui-part="control"
+        data-ui-variant="{{ semantic_variant }}"
+        name="{{ name }}"
+        value="{{ value }}"
+        {% if checked %}checked{% endif %}
+        {% if disabled %}disabled data-ui-state="disabled"{% endif %}
+    />
+    {% if label %}
+        <span data-ui-part="label">{{ label }}</span>
+    {% else %}
+        {% block content %}{% endblock %}
+    {% endif %}
+</label>
+{% endif %}

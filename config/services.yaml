@@ -1,0 +1,23 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  Symfinity\UxBlocksForm\:
+    resource: '../src/'
+    exclude:
+      - '../src/SymfinityUxBlocksFormBundle.php'
+      - '../src/DependencyInjection/'
+
+  Symfinity\UxBlocksForm\Css\BlocksFormCssProvider:
+    arguments:
+      $packageDir: '%ux_blocks_form.package_dir%'
+
+  Symfinity\UxBlocksForm\Registry\UxRoleRegistry:
+    arguments:
+      $yamlPath: '%ux_blocks_form.package_dir%/config/ux_roles.yaml'
+
+  Symfinity\UxBlocksForm\Twig\RoleAttributeBridgeListener:
+    arguments:
+      $fragmentIdsEnabled: '%ux_blocks_form.fragment_ids%'
+      $fragmentCounter: '@?Symfinity\UxBlocksForm\Twig\FragmentInstanceCounter'

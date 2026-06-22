@@ -1,0 +1,13 @@
+<form
+    method="{{ method|lower }}"
+    {% if action %}action="{{ action }}"{% endif %}
+    {% if novalidate %}novalidate{% endif %}
+    {{ attributes }}
+>
+    {% if title %}
+        <header data-ui-part="header"><h2>{{ title }}</h2></header>
+    {% endif %}
+    {% block header %}{% endblock %}
+    {% block content %}{% endblock %}
+    {% block footer %}{% endblock %}
+</form>

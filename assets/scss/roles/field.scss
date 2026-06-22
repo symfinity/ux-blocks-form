@@ -1,0 +1,87 @@
+@use '../_shared/mixins' as mixins;
+
+/* 067 — base field layout (relocated from _bundle.css, 107 T025) */
+[data-ui-role='field'] {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-space-xs);
+  font-family: var(--ui-font-family-sans);
+
+  label {
+    display: block;
+    margin-block-end: var(--ui-space-xs);
+    font-size: var(--ui-font-size-sm);
+    color: var(--ui-color-text-muted);
+    font-family: var(--ui-font-family-sans);
+  }
+
+  input {
+    border: 1px solid var(--ui-color-text-muted);
+    border-radius: var(--ui-radius-sm);
+    padding: var(--ui-space-sm);
+    font-family: var(--ui-font-family-sans);
+    width: 100%;
+    box-sizing: border-box;
+    font-size: var(--ui-font-size-sm);
+    background-color: var(--ui-color-surface);
+    transition:
+      border-color var(--ui-motion-duration-fast) var(--ui-motion-easing-standard),
+      box-shadow var(--ui-motion-duration-fast) var(--ui-motion-easing-standard);
+
+    &::placeholder {
+      color: var(--ui-color-text-muted);
+      -webkit-text-fill-color: var(--ui-color-text-muted);
+      opacity: 1;
+    }
+
+    &:not(:placeholder-shown) {
+      color: var(--ui-color-text);
+      -webkit-text-fill-color: var(--ui-color-text);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      color: var(--ui-color-text-muted);
+      -webkit-text-fill-color: var(--ui-color-text-muted);
+      border-color: color-mix(in srgb, var(--ui-color-border) 55%, transparent);
+      box-shadow: none;
+      background-color: color-mix(in srgb, var(--ui-color-text-muted) 14%, var(--ui-color-surface));
+    }
+  }
+
+  [data-ui-part='header'] {
+    display: block;
+    margin-block-end: var(--ui-space-xs);
+    font-size: var(--ui-font-size-sm);
+    color: var(--ui-color-text-muted);
+    font-family: var(--ui-font-family-sans);
+  }
+
+  [data-ui-part='footer'] {
+    margin: 0;
+    font-size: var(--ui-font-size-sm);
+    color: var(--ui-color-text-muted);
+    font-family: var(--ui-font-family-sans);
+  }
+
+  &[data-ui-state='invalid'] [data-ui-part='footer'],
+  &:has([data-ui-part='footer'][role='alert']) [data-ui-part='footer'] {
+    color: var(--ui-color-danger);
+  }
+
+  &:has(:invalid),
+  &:has(:user-invalid) {
+    --ux-field-shell-border: var(--ui-color-danger);
+
+    input {
+      border-color: var(--ui-color-danger);
+      box-shadow: 0 0 0 1px color-mix(in srgb, var(--ui-color-danger) 35%, transparent);
+    }
+  }
+
+  &:has(:focus-visible) input {
+    outline: 0;
+    border-color: var(--ui-color-focus);
+    @include mixins.focus-ring-default;
+  }
+}

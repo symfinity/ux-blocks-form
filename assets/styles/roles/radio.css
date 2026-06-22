@@ -1,0 +1,123 @@
+/* generated: blocks-css:compile — do not edit */
+
+@charset "UTF-8";
+/* 065 — token toggle chrome (migrated from _bundle.css; MUST NOT reset appearance:auto) */
+[data-ui-role="radio"]:has(> input[type=radio]) {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ui-space-xs);
+  font-family: var(--ui-font-family-sans);
+  font-size: var(--ui-font-size-md);
+  color: var(--ui-color-text);
+  cursor: pointer;
+}
+
+[data-ui-role="radio"]:has(> input[type=radio]:disabled),
+[data-ui-role="radio"][data-ui-state="disabled"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+[data-ui-role="radio-group-item"] {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ui-space-xs);
+  font-family: var(--ui-font-family-sans);
+  font-size: var(--ui-font-size-md);
+  color: var(--ui-color-text);
+  cursor: pointer;
+}
+
+[data-ui-role="radio-group-item"][data-ui-state="disabled"],
+[data-ui-role="radio-group-item"]:has(input:disabled) {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+[data-ui-role="radio"] > input[type=radio],
+[data-ui-role="radio-group-item"] input[data-ui-role="radio"],
+input[data-ui-role="radio"] {
+  --ui-toggle-track: color-mix(in srgb, var(--ui-color-text-muted) 28%, var(--ui-color-surface-elevated));
+  --ui-toggle-thumb: var(--ui-color-surface);
+  --ui-toggle-border: var(--ui-color-border);
+  --ui-toggle-accent: var(--ui-color-primary);
+  color-scheme: light dark;
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-block;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+  border: 1px solid var(--ui-toggle-border);
+  border-radius: 50%;
+  background-color: var(--ui-toggle-track);
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+[data-ui-role="radio"] > input[type=radio]:checked,
+[data-ui-role="radio-group-item"] input[data-ui-role="radio"]:checked,
+input[data-ui-role="radio"]:checked {
+  background-color: var(--ui-toggle-track);
+  background-image: radial-gradient(circle, var(--ui-toggle-accent) 38%, transparent 40%);
+}
+
+[data-ui-role="radio"] > input[type=radio]:focus-visible,
+[data-ui-role="radio-group-item"] input[data-ui-role="radio"]:focus-visible,
+input[data-ui-role="radio"]:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 var(--ui-focus-ring-blur) var(--ui-focus-ring-width) color-mix(in srgb, var(--ui-color-focus) calc(var(--ui-focus-ring-opacity) * 100%), transparent);
+}
+
+[data-ui-role="radio"] > input[type=radio][data-ui-variant="primary"],
+[data-ui-role="radio-group-item"] input[data-ui-role="radio"][data-ui-variant="primary"],
+input[data-ui-role="radio"][data-ui-variant="primary"] {
+  --ui-toggle-accent: var(--ui-color-primary);
+}
+
+[data-ui-role="radio"] > input[type=radio][data-ui-variant="secondary"],
+[data-ui-role="radio-group-item"] input[data-ui-role="radio"][data-ui-variant="secondary"],
+input[data-ui-role="radio"][data-ui-variant="secondary"] {
+  --ui-toggle-accent: var(--ui-color-secondary);
+}
+
+[data-ui-role="radio"] > input[type=radio][data-ui-variant="accent"],
+[data-ui-role="radio-group-item"] input[data-ui-role="radio"][data-ui-variant="accent"],
+input[data-ui-role="radio"][data-ui-variant="accent"] {
+  --ui-toggle-accent: var(--ui-color-accent);
+}
+
+[data-ui-role="radio"] > input[type=radio][data-ui-variant="success"],
+[data-ui-role="radio-group-item"] input[data-ui-role="radio"][data-ui-variant="success"],
+input[data-ui-role="radio"][data-ui-variant="success"] {
+  --ui-toggle-accent: var(--ui-color-success);
+}
+
+[data-ui-role="radio"] > input[type=radio][data-ui-variant="danger"],
+[data-ui-role="radio-group-item"] input[data-ui-role="radio"][data-ui-variant="danger"],
+input[data-ui-role="radio"][data-ui-variant="danger"] {
+  --ui-toggle-accent: var(--ui-color-danger);
+}
+
+[data-ui-role="radio"] > input[type=radio][data-ui-variant="info"],
+[data-ui-role="radio-group-item"] input[data-ui-role="radio"][data-ui-variant="info"],
+input[data-ui-role="radio"][data-ui-variant="info"] {
+  --ui-toggle-accent: var(--ui-color-info);
+}
+
+[data-ui-role="radio"] > input[type=radio][data-ui-variant="warning"],
+[data-ui-role="radio-group-item"] input[data-ui-role="radio"][data-ui-variant="warning"],
+input[data-ui-role="radio"][data-ui-variant="warning"] {
+  --ui-toggle-accent: var(--ui-color-warning);
+}
+
+[data-ui-role="radio"] > input[type=radio][data-ui-variant="neutral"],
+[data-ui-role="radio-group-item"] input[data-ui-role="radio"][data-ui-variant="neutral"],
+input[data-ui-role="radio"][data-ui-variant="neutral"] {
+  --ui-toggle-accent: var(--ui-color-neutral);
+}
