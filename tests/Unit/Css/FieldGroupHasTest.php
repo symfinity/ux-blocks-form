@@ -9,6 +9,8 @@ use PHPUnit\Framework\TestCase;
 
 final class FieldGroupHasTest extends TestCase
 {
+    use AssertsCssSelector;
+
     private static function roleCss(string $role): string
     {
         $path = dirname(__DIR__, 3) . '/assets/styles/roles/' . $role . '.css';
@@ -31,8 +33,8 @@ final class FieldGroupHasTest extends TestCase
     {
         $css = self::roleCss('input-group');
 
-        self::assertStringContainsString(':has(:invalid) [data-ui-role="input"]', $css);
-        self::assertStringContainsString(':has(:focus-visible) [data-ui-role="input"]', $css);
+        self::assertCssContains($css, ':has(:invalid) [data-ui-role="input"]');
+        self::assertCssContains($css, ':has(:focus-visible) [data-ui-role="input"]');
     }
 
     #[Test]

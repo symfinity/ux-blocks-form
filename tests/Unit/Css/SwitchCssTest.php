@@ -9,6 +9,8 @@ use PHPUnit\Framework\TestCase;
 
 final class SwitchCssTest extends TestCase
 {
+    use AssertsCssSelector;
+
     private static function roleCss(): string
     {
         $path = dirname(__DIR__, 3) . '/assets/styles/roles/switch.css';
@@ -22,7 +24,7 @@ final class SwitchCssTest extends TestCase
     {
         $css = self::roleCss();
 
-        self::assertStringContainsString('[data-ui-role="switch"]', $css);
+        self::assertCssContains($css, '[data-ui-role="switch"]');
         self::assertStringContainsString('--switch-track-inset: 1px', $css);
         self::assertStringContainsString('background-clip: content-box, content-box, padding-box', $css);
         self::assertStringContainsString('--ui-switch-ring:', $css);

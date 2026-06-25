@@ -9,13 +9,15 @@ use PHPUnit\Framework\TestCase;
 
 final class FloatingFieldCssTest extends TestCase
 {
+    use AssertsCssSelector;
+
     #[Test]
     public function labelFloatsOnFocusOrValue(): void
     {
         $css = (string) file_get_contents(dirname(__DIR__, 3) . '/assets/styles/roles/floating-field.css');
 
         self::assertStringContainsString(':not(:placeholder-shown)', $css);
-        self::assertStringContainsString('[data-ui-part="label"]', $css);
+        self::assertCssContains($css, '[data-ui-part="label"]');
         self::assertStringContainsString('grid-row: 1', $css);
         self::assertStringContainsString('grid-row: 2', $css);
         self::assertStringNotContainsString('top: 50%', $css);

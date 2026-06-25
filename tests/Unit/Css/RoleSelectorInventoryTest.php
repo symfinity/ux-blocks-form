@@ -12,6 +12,8 @@ use PHPUnit\Framework\TestCase;
  */
 final class RoleSelectorInventoryTest extends TestCase
 {
+    use AssertsCssSelector;
+
     /**
      * Literal selector inventory — scanned by {@see \Symfinity\UxBlocks\DevTools\CssSelectorCoverageReporter}.
      */
@@ -38,7 +40,7 @@ SELECTORS;
         $css = self::bundleCss();
 
         foreach (self::inventoryRoles() as $role) {
-            self::assertStringContainsString('[data-ui-role="' . $role . '"]', $css, $role);
+            self::assertCssContains($css, '[data-ui-role="' . $role . '"]', $role);
         }
     }
 

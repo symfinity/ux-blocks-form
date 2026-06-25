@@ -9,6 +9,8 @@ use PHPUnit\Framework\TestCase;
 
 final class FileInputCssTest extends TestCase
 {
+    use AssertsCssSelector;
+
     private static function bundleCss(): string
     {
         $path = dirname(__DIR__, 3) . '/assets/styles/roles/_bundle.css';
@@ -22,14 +24,14 @@ final class FileInputCssTest extends TestCase
     {
         $css = self::bundleCss();
 
-        self::assertStringContainsString('[data-ui-role="file-input"]::file-selector-button', $css);
+        self::assertCssContains($css, '[data-ui-role="file-input"]::file-selector-button');
         self::assertStringContainsString('margin-inline-start: calc(-1 * var(--ui-space-sm))', $css);
         self::assertStringContainsString('border-inline-end: 1px solid var(--ui-color-border)', $css);
         self::assertStringContainsString('border-radius: 0', $css);
-        self::assertStringContainsString('[data-ui-role="file-input"]:focus-within {', $css);
-        self::assertStringNotContainsString('[data-ui-role="file-input"]:focus-within::file-selector-button {
+        self::assertCssContains($css, '[data-ui-role="file-input"]:focus-within {');
+        self::assertCssNotContains($css, '[data-ui-role="file-input"]:focus-within::file-selector-button {
 outline: 0;
-  box-shadow:', $css);
+  box-shadow:');
     }
 
     #[Test]

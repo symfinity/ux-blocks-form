@@ -9,6 +9,8 @@ use PHPUnit\Framework\TestCase;
 
 final class ContainerRegionLayoutTest extends TestCase
 {
+    use AssertsCssSelector;
+
     #[Test]
     public function fieldPositionsHeaderAndFooterParts(): void
     {
@@ -16,7 +18,7 @@ final class ContainerRegionLayoutTest extends TestCase
         self::assertFileExists($path);
         $css = (string) file_get_contents($path);
 
-        self::assertStringContainsString('[data-ui-part="header"]', $css);
-        self::assertStringContainsString('[data-ui-part="footer"]', $css);
+        self::assertCssContains($css, '[data-ui-part="header"]');
+        self::assertCssContains($css, '[data-ui-part="footer"]');
     }
 }

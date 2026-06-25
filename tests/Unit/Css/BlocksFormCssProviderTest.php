@@ -10,6 +10,8 @@ use Symfinity\UxBlocksForm\Css\BlocksFormCssProvider;
 
 final class BlocksFormCssProviderTest extends TestCase
 {
+    use AssertsCssSelector;
+
     #[Test]
     public function itInlinesSplitRoleStylesheetsForWorkshopPreview(): void
     {
@@ -17,10 +19,10 @@ final class BlocksFormCssProviderTest extends TestCase
         $provider = new BlocksFormCssProvider($packageDir);
         $css = $provider->stylesheet();
 
-        self::assertStringContainsString('[data-ui-role="input"][data-ui-variant="danger"]', $css);
-        self::assertStringContainsString('[data-ui-part="input-adornment"]', $css);
-        self::assertStringContainsString('[data-ui-role="field"]', $css);
-        self::assertStringContainsString('[data-ui-role="checkbox"]', $css);
+        self::assertCssContains($css, '[data-ui-role="input"][data-ui-variant="danger"]');
+        self::assertCssContains($css, '[data-ui-part="input-adornment"]');
+        self::assertCssContains($css, '[data-ui-role="field"]');
+        self::assertCssContains($css, '[data-ui-role="checkbox"]');
         self::assertSame(substr_count($css, '{'), substr_count($css, '}'), 'inlined form CSS must have balanced braces');
     }
 }

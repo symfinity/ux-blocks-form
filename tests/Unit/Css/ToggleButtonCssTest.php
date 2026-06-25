@@ -9,6 +9,8 @@ use PHPUnit\Framework\TestCase;
 
 final class ToggleButtonCssTest extends TestCase
 {
+    use AssertsCssSelector;
+
     private static function roleCss(): string
     {
         $path = dirname(__DIR__, 3) . '/assets/styles/roles/toggle-button.css';
@@ -22,8 +24,8 @@ final class ToggleButtonCssTest extends TestCase
     {
         $css = self::roleCss();
 
-        self::assertStringContainsString('[data-ui-role="checkbox"][data-ui-appearance="button"]', $css);
-        self::assertStringContainsString('[data-ui-role="radio"][data-ui-appearance="button"]', $css);
+        self::assertCssContains($css, '[data-ui-role="checkbox"][data-ui-appearance="button"]');
+        self::assertCssContains($css, '[data-ui-role="radio"][data-ui-appearance="button"]');
         self::assertStringContainsString('clip: rect(0, 0, 0, 0)', $css);
     }
 
@@ -32,9 +34,9 @@ final class ToggleButtonCssTest extends TestCase
     {
         $css = self::roleCss();
 
-        self::assertStringContainsString(
-            '[data-ui-appearance="button"]:checked + [data-ui-role="button"][data-ui-variant="primary"][data-ui-appearance="outline"]',
+        self::assertCssContains(
             $css,
+            '[data-ui-appearance="button"]:checked + [data-ui-role="button"][data-ui-variant="primary"][data-ui-appearance="outline"]',
         );
         self::assertStringContainsString('background: var(--ui-color-primary)', $css);
     }
@@ -44,9 +46,9 @@ final class ToggleButtonCssTest extends TestCase
     {
         $css = self::roleCss();
 
-        self::assertStringContainsString(
-            '[data-ui-appearance="button"]:not(:checked):not(:disabled) + [data-ui-role="button"][data-ui-variant="primary"][data-ui-appearance="solid"]',
+        self::assertCssContains(
             $css,
+            '[data-ui-appearance="button"]:not(:checked):not(:disabled) + [data-ui-role="button"][data-ui-variant="primary"][data-ui-appearance="solid"]',
         );
         self::assertStringContainsString('background: transparent', $css);
     }
@@ -56,9 +58,9 @@ final class ToggleButtonCssTest extends TestCase
     {
         $css = self::roleCss();
 
-        self::assertStringContainsString(
-            '[data-ui-appearance="button"]:checked + [data-ui-role="button"][data-ui-appearance="solid"]',
+        self::assertCssContains(
             $css,
+            '[data-ui-appearance="button"]:checked + [data-ui-role="button"][data-ui-appearance="solid"]',
         );
         self::assertStringContainsString('box-shadow: inset', $css);
     }
@@ -82,7 +84,7 @@ final class ToggleButtonCssTest extends TestCase
 
         $css = (string) file_get_contents($path);
 
-        self::assertStringContainsString('[data-ui-role=button] ~ [data-ui-role=button]', $css);
+        self::assertCssContains($css, '[data-ui-role=button] ~ [data-ui-role=button]');
         self::assertStringContainsString(':not(:last-of-type)', $css);
         self::assertStringNotContainsString(':not(:first-child)', $css);
     }

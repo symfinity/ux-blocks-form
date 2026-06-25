@@ -9,6 +9,8 @@ use PHPUnit\Framework\TestCase;
 
 final class GroupConnectedCssTest extends TestCase
 {
+    use AssertsCssSelector;
+
     private static function roleCss(string $role): string
     {
         $path = dirname(__DIR__, 3) . '/assets/styles/roles/' . $role . '.css';
@@ -22,9 +24,9 @@ final class GroupConnectedCssTest extends TestCase
     {
         $css = self::roleCss('input-group');
 
-        self::assertStringContainsString('[data-ui-role="input-group"] > :not(:first-child)', $css);
+        self::assertCssContains($css, '[data-ui-role="input-group"] > :not(:first-child)');
         self::assertStringContainsString('margin-inline-start: -1px', $css);
-        self::assertStringContainsString('[data-ui-role="input-group"] > [data-ui-role="input"]', $css);
+        self::assertCssContains($css, '[data-ui-role="input-group"] > [data-ui-role="input"]');
         self::assertStringContainsString('flex: 1 1 auto', $css);
     }
 }
