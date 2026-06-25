@@ -29,29 +29,6 @@ Before we port your patch:
 - Tests for behavior changes
 - CHANGELOG entries are added by maintainers at release time unless requested
 
-### Running tests
-
-**Split mirror / CI** (only this package’s `vendor/`):
-
-```bash
-composer install
-vendor/bin/phpunit
-vendor/bin/phpstan analyse --memory-limit=512M
-```
-
-**Symfinity product monorepo** (do not use package `vendor/bin/phpunit` when `/app/vendor` also exists — dual autoload fatals on `Psr\Container`):
-
-```bash
-# from src/symfinity/
-./sbin/php vendor/bin/phpunit packages/ux-blocks-form/tests/
-
-# or Docker (org stack)
-docker compose --env-file .env.docker run --rm -T -w /app php vendor/bin/phpunit packages/ux-blocks-form/tests/
-
-# package wrapper (delegates to monorepo phpunit when mono.json is present)
-docker compose --env-file .env.docker run --rm -T -w /app/packages/ux-blocks-form php bin/phpunit
-```
-
 ## Security
 
 Report vulnerabilities privately — see [.github/SECURITY.md](.github/SECURITY.md). Do not file security issues in public GitHub issues.

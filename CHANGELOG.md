@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] - 2026-06-25
+
+### Changed
+
+- **Role CSS** — regenerated `bundle.css` and per-role styles for `field`, `fieldset`, `floating-field`, `form`, `checkbox`, `radio`, `radio-group`, `switch`, `toggle-button`, `range`, `file-upload`, `input-group`, `input-adornment`, and `input-type-variants`
+- **Toggle button** — appearance CSS polish for segmented checkbox/radio controls
+- **Switch** — track/thumb contrast and focus ring alignment with core form tokens
+- **Floating field** — label float and control padding updates for horizontal layouts
+
+### Notes
+
+- No Twig component props or registry role ids changed — CSS-only patch
+- Pair with `symfinity/ux-blocks-core` `^0.1.1` when using the refreshed core role CSS together
+
 ## [0.1.0] - 2026-06-23
 
 Initial public release of the UX Blocks Form bundle for Symfony: seventeen native form-domain Twig components, role CSS, and registry integration for the Symfinity UX Blocks catalog.

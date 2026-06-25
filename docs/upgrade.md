@@ -18,6 +18,19 @@ Ensure the [symfinity/recipes](https://github.com/symfinity/recipes) Flex endpoi
 - Seventeen form-domain Twig component roles with `blocks.*` fragment ids
 - `symfinity/ux-blocks-core` and `symfinity/ux-blocks` installed as dependencies
 
+## 0.1.1
+
+Patch release after [v0.1.0](https://github.com/symfinity/ux-blocks-form/releases/tag/v0.1.0). Regenerated form role CSS — no component props or registry ids changed.
+
+```bash
+composer update symfinity/ux-blocks-form
+```
+
+After upgrade:
+
+1. Clear Symfony cache and hard-refresh AssetMapper CSS in dev.
+2. Re-check toggle-button, switch, and floating-field layouts if you use visual regression tests.
+
 ## Future releases
 
 See [CHANGELOG](https://github.com/symfinity/ux-blocks-form/blob/main/CHANGELOG.md) for version-to-version notes.
