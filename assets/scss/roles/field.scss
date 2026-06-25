@@ -15,7 +15,8 @@
     font-family: var(--ui-font-family-sans);
   }
 
-  input {
+  input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='file']):not([type='hidden']),
+  textarea {
     border: 1px solid var(--ui-color-text-muted);
     border-radius: var(--ui-radius-sm);
     padding: var(--ui-space-sm);
@@ -73,15 +74,28 @@
   &:has(:user-invalid) {
     --ux-field-shell-border: var(--ui-color-danger);
 
-    input {
+    input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='file']):not([type='hidden']),
+    textarea {
       border-color: var(--ui-color-danger);
       box-shadow: 0 0 0 1px color-mix(in srgb, var(--ui-color-danger) 35%, transparent);
     }
   }
 
-  &:has(:focus-visible) input {
+  &:has(:focus-visible) input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='file']):not([type='hidden']),
+  &:has(:focus-visible) textarea {
     outline: 0;
     border-color: var(--ui-color-focus);
     @include mixins.focus-ring-default;
+  }
+
+  &[data-ui-orientation='horizontal'] {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--ui-space-sm);
+
+    label {
+      margin-block-end: 0;
+    }
   }
 }

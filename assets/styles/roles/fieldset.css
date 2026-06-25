@@ -1,7 +1,5 @@
-/* generated: blocks-css:compile — do not edit */
-
 @charset "UTF-8";
-[data-ui-role="fieldset"] {
+[data-ui-role=fieldset] {
   border: 1px solid var(--ui-color-border);
   border-radius: var(--ui-radius-md);
   padding: var(--ui-space-md);
@@ -11,17 +9,17 @@
 }
 
 /* 100 A2 — fieldset shell :has() emphasis */
-[data-ui-role="fieldset"]:has(:invalid),
-[data-ui-role="fieldset"]:has(:user-invalid) {
+[data-ui-role=fieldset]:has(:invalid),
+[data-ui-role=fieldset]:has(:user-invalid) {
   border-color: var(--ui-color-danger);
 }
 
-[data-ui-role="fieldset"]:has(:focus-visible) {
+[data-ui-role=fieldset]:has(:focus-visible) {
   outline: 0;
   box-shadow: 0 0 var(--ui-focus-ring-blur) var(--ui-focus-ring-width) color-mix(in srgb, var(--ui-color-focus) calc(var(--ui-focus-ring-opacity) * 100%), transparent);
 }
 
-[data-ui-role="fieldset"]:has(:invalid) legend,
-[data-ui-role="fieldset"]:has(:user-invalid) legend {
+[data-ui-role=fieldset]:has(:invalid) legend,
+[data-ui-role=fieldset]:has(:user-invalid) legend {
   color: var(--ui-color-danger);
 }

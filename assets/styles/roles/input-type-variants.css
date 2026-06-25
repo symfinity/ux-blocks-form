@@ -1,12 +1,10 @@
-/* generated: blocks-css:compile — do not edit */
-
 @charset "UTF-8";
 /* Dedicated native input type chrome — still single Input role; type selectors only */
-[data-ui-role="input"][type=search] {
+[data-ui-role=input][type=search] {
   -webkit-appearance: none;
   appearance: none;
 }
-[data-ui-role="input"][type=search]::-webkit-search-cancel-button {
+[data-ui-role=input][type=search]::-webkit-search-cancel-button {
   -webkit-appearance: none;
   appearance: none;
   height: 1rem;
@@ -17,77 +15,77 @@
   cursor: pointer;
 }
 
-[data-ui-role="input"][type=color] {
+[data-ui-role=input][type=color] {
   min-height: 2.5rem;
   padding: var(--ui-space-xs);
   cursor: pointer;
 }
-[data-ui-role="input"][type=color]::-webkit-color-swatch-wrapper {
+[data-ui-role=input][type=color]::-webkit-color-swatch-wrapper {
   padding: 0;
 }
-[data-ui-role="input"][type=color]::-webkit-color-swatch {
+[data-ui-role=input][type=color]::-webkit-color-swatch {
   border: 1px solid var(--ui-color-border);
   border-radius: calc(var(--ui-radius-sm) - 2px);
 }
 
-[data-ui-role="input"][type=datetime-local] {
+[data-ui-role=input][type=datetime-local] {
   min-height: 2.5rem;
   color-scheme: light dark;
 }
 
-[data-ui-role="input"][type=date] {
+[data-ui-role=input][type=date] {
   min-height: 2.5rem;
   color-scheme: light dark;
 }
 
-[data-ui-role="input"][type=time] {
+[data-ui-role=input][type=time] {
   min-height: 2.5rem;
   color-scheme: light dark;
 }
 
-[data-ui-role="input"][type=month] {
+[data-ui-role=input][type=month] {
   min-height: 2.5rem;
   color-scheme: light dark;
 }
 
-[data-ui-role="input"][type=week] {
+[data-ui-role=input][type=week] {
   min-height: 2.5rem;
   color-scheme: light dark;
 }
 
-[data-ui-role="input"][type=datetime-local]::-webkit-calendar-picker-indicator {
+[data-ui-role=input][type=datetime-local]::-webkit-calendar-picker-indicator {
   cursor: pointer;
   opacity: 0.72;
 }
 
-[data-ui-role="input"][type=date]::-webkit-calendar-picker-indicator {
+[data-ui-role=input][type=date]::-webkit-calendar-picker-indicator {
   cursor: pointer;
   opacity: 0.72;
 }
 
-[data-ui-role="input"][type=time]::-webkit-calendar-picker-indicator {
+[data-ui-role=input][type=time]::-webkit-calendar-picker-indicator {
   cursor: pointer;
   opacity: 0.72;
 }
 
-[data-ui-role="input"][type=month]::-webkit-calendar-picker-indicator {
+[data-ui-role=input][type=month]::-webkit-calendar-picker-indicator {
   cursor: pointer;
   opacity: 0.72;
 }
 
-[data-ui-role="input"][type=week]::-webkit-calendar-picker-indicator {
+[data-ui-role=input][type=week]::-webkit-calendar-picker-indicator {
   cursor: pointer;
   opacity: 0.72;
 }
 
-[data-ui-role="input"][type=datetime-local]:focus-visible::-webkit-calendar-picker-indicator {
+[data-ui-role=input][type=datetime-local]:focus-visible::-webkit-calendar-picker-indicator {
   opacity: 1;
 }
 
-[data-ui-role="input"][type=date]:focus-visible::-webkit-calendar-picker-indicator {
+[data-ui-role=input][type=date]:focus-visible::-webkit-calendar-picker-indicator {
   opacity: 1;
 }
 
-[data-ui-role="input"][type=time]:focus-visible::-webkit-calendar-picker-indicator {
+[data-ui-role=input][type=time]:focus-visible::-webkit-calendar-picker-indicator {
   opacity: 1;
 }

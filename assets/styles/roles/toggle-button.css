@@ -1,9 +1,7 @@
-/* generated: blocks-css:compile — do not edit */
-
 @charset "UTF-8";
 /* 110-A1 — Bootstrap .btn-check parity: hidden native input + button label */
-[data-ui-role="checkbox"][data-ui-appearance="button"],
-[data-ui-role="radio"][data-ui-appearance="button"] {
+[data-ui-role=checkbox][data-ui-appearance=button],
+[data-ui-role=radio][data-ui-appearance=button] {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -15,7 +13,7 @@
   border: 0;
 }
 
-[data-ui-role="button-group"] > [data-ui-appearance="button"] {
+[data-ui-role=button-group] > [data-ui-appearance=button] {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -27,129 +25,129 @@
   border: 0;
 }
 
-[data-ui-appearance="button"]:focus-visible + [data-ui-role="button"] {
+[data-ui-appearance=button]:focus-visible + [data-ui-role=button] {
   outline: 0;
   box-shadow: 0 0 var(--ui-focus-ring-blur) var(--ui-focus-ring-width) color-mix(in srgb, var(--ui-color-focus) calc(var(--ui-focus-ring-opacity) * 100%), transparent);
   z-index: 1;
 }
 
-[data-ui-appearance="button"]:disabled + [data-ui-role="button"],
-[data-ui-appearance="button"]:disabled + [data-ui-role="button"][data-ui-state="disabled"] {
+[data-ui-appearance=button]:disabled + [data-ui-role=button],
+[data-ui-appearance=button]:disabled + [data-ui-role=button][data-ui-state=disabled] {
   opacity: 0.5;
   cursor: not-allowed;
   pointer-events: none;
 }
 
-[data-ui-appearance="button"]:checked + [data-ui-role="button"][data-ui-variant="primary"][data-ui-appearance="outline"] {
+[data-ui-appearance=button]:checked + [data-ui-role=button][data-ui-variant=primary][data-ui-appearance=outline] {
   background: var(--ui-color-primary);
   color: var(--ui-color-on-primary);
   border-color: var(--ui-color-primary);
 }
 
-[data-ui-appearance="button"]:checked + [data-ui-role="button"][data-ui-variant="secondary"][data-ui-appearance="outline"] {
+[data-ui-appearance=button]:checked + [data-ui-role=button][data-ui-variant=secondary][data-ui-appearance=outline] {
   background: var(--ui-color-secondary);
   color: var(--ui-color-on-secondary);
   border-color: var(--ui-color-secondary);
 }
 
-[data-ui-appearance="button"]:checked + [data-ui-role="button"][data-ui-variant="accent"][data-ui-appearance="outline"] {
+[data-ui-appearance=button]:checked + [data-ui-role=button][data-ui-variant=accent][data-ui-appearance=outline] {
   background: var(--ui-color-accent);
   color: var(--ui-color-on-accent);
   border-color: var(--ui-color-accent);
 }
 
-[data-ui-appearance="button"]:checked + [data-ui-role="button"][data-ui-variant="success"][data-ui-appearance="outline"] {
+[data-ui-appearance=button]:checked + [data-ui-role=button][data-ui-variant=success][data-ui-appearance=outline] {
   background: var(--ui-color-success);
   color: var(--ui-color-on-success);
   border-color: var(--ui-color-success);
 }
 
-[data-ui-appearance="button"]:checked + [data-ui-role="button"][data-ui-variant="danger"][data-ui-appearance="outline"] {
+[data-ui-appearance=button]:checked + [data-ui-role=button][data-ui-variant=danger][data-ui-appearance=outline] {
   background: var(--ui-color-danger);
   color: var(--ui-color-on-danger);
   border-color: var(--ui-color-danger);
 }
 
-[data-ui-appearance="button"]:checked + [data-ui-role="button"][data-ui-variant="info"][data-ui-appearance="outline"] {
+[data-ui-appearance=button]:checked + [data-ui-role=button][data-ui-variant=info][data-ui-appearance=outline] {
   background: var(--ui-color-info);
   color: var(--ui-color-on-info);
   border-color: var(--ui-color-info);
 }
 
-[data-ui-appearance="button"]:checked + [data-ui-role="button"][data-ui-variant="warning"][data-ui-appearance="outline"] {
+[data-ui-appearance=button]:checked + [data-ui-role=button][data-ui-variant=warning][data-ui-appearance=outline] {
   background: var(--ui-color-warning);
   color: var(--ui-color-on-warning);
   border-color: var(--ui-color-warning);
 }
 
-[data-ui-appearance="button"]:checked + [data-ui-role="button"][data-ui-variant="neutral"][data-ui-appearance="outline"] {
+[data-ui-appearance=button]:checked + [data-ui-role=button][data-ui-variant=neutral][data-ui-appearance=outline] {
   background: var(--ui-color-neutral);
   color: var(--ui-color-on-neutral);
   border-color: var(--ui-color-neutral);
 }
 
-[data-ui-appearance="button"]:not(:checked):not(:disabled) + [data-ui-role="button"][data-ui-variant="primary"][data-ui-appearance="solid"],
-[data-ui-appearance="button"]:not(:checked):not(:disabled) + [data-ui-role="button"][data-ui-variant="primary"]:not([data-ui-appearance]) {
+[data-ui-appearance=button]:not(:checked):not(:disabled) + [data-ui-role=button][data-ui-variant=primary][data-ui-appearance=solid],
+[data-ui-appearance=button]:not(:checked):not(:disabled) + [data-ui-role=button][data-ui-variant=primary]:not([data-ui-appearance]) {
   background: transparent;
   color: var(--ui-color-primary);
   border-color: var(--ui-color-primary);
 }
 
-[data-ui-appearance="button"]:not(:checked):not(:disabled) + [data-ui-role="button"][data-ui-variant="secondary"][data-ui-appearance="solid"],
-[data-ui-appearance="button"]:not(:checked):not(:disabled) + [data-ui-role="button"][data-ui-variant="secondary"]:not([data-ui-appearance]) {
+[data-ui-appearance=button]:not(:checked):not(:disabled) + [data-ui-role=button][data-ui-variant=secondary][data-ui-appearance=solid],
+[data-ui-appearance=button]:not(:checked):not(:disabled) + [data-ui-role=button][data-ui-variant=secondary]:not([data-ui-appearance]) {
   background: transparent;
   color: var(--ui-color-secondary);
   border-color: var(--ui-color-secondary);
 }
 
-[data-ui-appearance="button"]:not(:checked):not(:disabled) + [data-ui-role="button"][data-ui-variant="accent"][data-ui-appearance="solid"],
-[data-ui-appearance="button"]:not(:checked):not(:disabled) + [data-ui-role="button"][data-ui-variant="accent"]:not([data-ui-appearance]) {
+[data-ui-appearance=button]:not(:checked):not(:disabled) + [data-ui-role=button][data-ui-variant=accent][data-ui-appearance=solid],
+[data-ui-appearance=button]:not(:checked):not(:disabled) + [data-ui-role=button][data-ui-variant=accent]:not([data-ui-appearance]) {
   background: transparent;
   color: var(--ui-color-accent);
   border-color: var(--ui-color-accent);
 }
 
-[data-ui-appearance="button"]:not(:checked):not(:disabled) + [data-ui-role="button"][data-ui-variant="success"][data-ui-appearance="solid"],
-[data-ui-appearance="button"]:not(:checked):not(:disabled) + [data-ui-role="button"][data-ui-variant="success"]:not([data-ui-appearance]) {
+[data-ui-appearance=button]:not(:checked):not(:disabled) + [data-ui-role=button][data-ui-variant=success][data-ui-appearance=solid],
+[data-ui-appearance=button]:not(:checked):not(:disabled) + [data-ui-role=button][data-ui-variant=success]:not([data-ui-appearance]) {
   background: transparent;
   color: var(--ui-color-success);
   border-color: var(--ui-color-success);
 }
 
-[data-ui-appearance="button"]:not(:checked):not(:disabled) + [data-ui-role="button"][data-ui-variant="danger"][data-ui-appearance="solid"],
-[data-ui-appearance="button"]:not(:checked):not(:disabled) + [data-ui-role="button"][data-ui-variant="danger"]:not([data-ui-appearance]) {
+[data-ui-appearance=button]:not(:checked):not(:disabled) + [data-ui-role=button][data-ui-variant=danger][data-ui-appearance=solid],
+[data-ui-appearance=button]:not(:checked):not(:disabled) + [data-ui-role=button][data-ui-variant=danger]:not([data-ui-appearance]) {
   background: transparent;
   color: var(--ui-color-danger);
   border-color: var(--ui-color-danger);
 }
 
-[data-ui-appearance="button"]:not(:checked):not(:disabled) + [data-ui-role="button"][data-ui-variant="info"][data-ui-appearance="solid"],
-[data-ui-appearance="button"]:not(:checked):not(:disabled) + [data-ui-role="button"][data-ui-variant="info"]:not([data-ui-appearance]) {
+[data-ui-appearance=button]:not(:checked):not(:disabled) + [data-ui-role=button][data-ui-variant=info][data-ui-appearance=solid],
+[data-ui-appearance=button]:not(:checked):not(:disabled) + [data-ui-role=button][data-ui-variant=info]:not([data-ui-appearance]) {
   background: transparent;
   color: var(--ui-color-info);
   border-color: var(--ui-color-info);
 }
 
-[data-ui-appearance="button"]:not(:checked):not(:disabled) + [data-ui-role="button"][data-ui-variant="warning"][data-ui-appearance="solid"],
-[data-ui-appearance="button"]:not(:checked):not(:disabled) + [data-ui-role="button"][data-ui-variant="warning"]:not([data-ui-appearance]) {
+[data-ui-appearance=button]:not(:checked):not(:disabled) + [data-ui-role=button][data-ui-variant=warning][data-ui-appearance=solid],
+[data-ui-appearance=button]:not(:checked):not(:disabled) + [data-ui-role=button][data-ui-variant=warning]:not([data-ui-appearance]) {
   background: transparent;
   color: var(--ui-color-warning);
   border-color: var(--ui-color-warning);
 }
 
-[data-ui-appearance="button"]:not(:checked):not(:disabled) + [data-ui-role="button"][data-ui-variant="neutral"][data-ui-appearance="solid"],
-[data-ui-appearance="button"]:not(:checked):not(:disabled) + [data-ui-role="button"][data-ui-variant="neutral"]:not([data-ui-appearance]) {
+[data-ui-appearance=button]:not(:checked):not(:disabled) + [data-ui-role=button][data-ui-variant=neutral][data-ui-appearance=solid],
+[data-ui-appearance=button]:not(:checked):not(:disabled) + [data-ui-role=button][data-ui-variant=neutral]:not([data-ui-appearance]) {
   background: transparent;
   color: var(--ui-color-neutral);
   border-color: var(--ui-color-neutral);
 }
 
-[data-ui-appearance="button"]:checked + [data-ui-role="button"][data-ui-appearance="solid"],
-[data-ui-appearance="button"]:checked + [data-ui-role="button"]:not([data-ui-appearance]) {
+[data-ui-appearance=button]:checked + [data-ui-role=button][data-ui-appearance=solid],
+[data-ui-appearance=button]:checked + [data-ui-role=button]:not([data-ui-appearance]) {
   box-shadow: inset 0 2px 4px color-mix(in srgb, var(--ui-color-text) 16%, transparent);
 }
 
-[data-ui-appearance="button"]:checked + [data-ui-role="button"][data-ui-appearance="link"] {
+[data-ui-appearance=button]:checked + [data-ui-role=button][data-ui-appearance=link] {
   font-weight: 600;
   text-decoration-thickness: 2px;
 }

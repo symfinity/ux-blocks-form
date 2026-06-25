@@ -1,8 +1,6 @@
-/* generated: blocks-css:compile — do not edit */
-
 @charset "UTF-8";
 /* Rich file upload — hidden native input + button chrome (shadcn/Bootstrap pattern) */
-[data-ui-role="file-upload"] {
+[data-ui-role=file-upload] {
   position: relative;
   display: inline-flex;
   flex-wrap: wrap;
@@ -11,7 +9,7 @@
   font-family: var(--ui-font-family-sans);
 }
 
-[data-ui-role="file-upload"] [data-ui-part="control"] {
+[data-ui-role=file-upload] [data-ui-part=control] {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -23,36 +21,36 @@
   border: 0;
 }
 
-[data-ui-role="file-upload"]:focus-within [data-ui-role="button"] {
+[data-ui-role=file-upload]:focus-within [data-ui-role=button] {
   outline: 0;
   box-shadow: 0 0 var(--ui-focus-ring-blur) var(--ui-focus-ring-width) color-mix(in srgb, var(--ui-color-focus) calc(var(--ui-focus-ring-opacity) * 100%), transparent);
 }
 
-[data-ui-role="file-upload"][data-ui-state="invalid"] [data-ui-role="button"] {
+[data-ui-role=file-upload][data-ui-state=invalid] [data-ui-role=button] {
   border-color: var(--ui-color-danger);
 }
 
-[data-ui-role="file-upload"][data-ui-state="disabled"] [data-ui-role="button"],
-[data-ui-role="file-upload"]:has([data-ui-part="control"]:disabled) [data-ui-role="button"] {
+[data-ui-role=file-upload][data-ui-state=disabled] [data-ui-role=button],
+[data-ui-role=file-upload]:has([data-ui-part=control]:disabled) [data-ui-role=button] {
   opacity: 0.55;
   cursor: not-allowed;
   pointer-events: none;
 }
 
-[data-ui-role="file-upload"] [data-ui-part="filename"] {
+[data-ui-role=file-upload] [data-ui-part=filename] {
   flex: 1 1 100%;
   font-size: var(--ui-text-sm);
   color: var(--ui-color-text-muted);
 }
 
-[data-ui-role="file-upload"] [data-ui-part="filename-selected"] {
+[data-ui-role=file-upload] [data-ui-part=filename-selected] {
   display: none;
 }
 
-[data-ui-role="file-upload"]:has([data-ui-part="control"]:valid:required) [data-ui-part="filename-empty"] {
+[data-ui-role=file-upload]:has([data-ui-part=control]:valid:required) [data-ui-part=filename-empty] {
   display: none;
 }
 
-[data-ui-role="file-upload"]:has([data-ui-part="control"]:valid:required) [data-ui-part="filename-selected"] {
+[data-ui-role=file-upload]:has([data-ui-part=control]:valid:required) [data-ui-part=filename-selected] {
   display: inline;
 }

@@ -1,8 +1,6 @@
-/* generated: blocks-css:compile — do not edit */
-
 @charset "UTF-8";
 /* Floating labels — control + label share one grid cell; footer cannot skew label position */
-[data-ui-role="floating-field"] {
+[data-ui-role=floating-field] {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto auto;
@@ -10,23 +8,23 @@
   font-family: var(--ui-font-family-sans);
 }
 
-[data-ui-role="floating-field"] > [data-ui-role="input"],
-[data-ui-role="floating-field"] > [data-ui-part="input-adornment"],
-[data-ui-role="floating-field"] > [data-ui-role="textarea"] {
+[data-ui-role=floating-field] > [data-ui-role=input],
+[data-ui-role=floating-field] > [data-ui-part=input-adornment],
+[data-ui-role=floating-field] > [data-ui-role=textarea] {
   grid-row: 1;
   grid-column: 1;
   min-width: 0;
 }
 
-[data-ui-role="floating-field"] > [data-ui-role="textarea"] {
+[data-ui-role=floating-field] > [data-ui-role=textarea] {
   min-height: 0;
 }
 
-[data-ui-role="floating-field"] > [data-ui-part="input-adornment"] [data-ui-role="input"] {
+[data-ui-role=floating-field] > [data-ui-part=input-adornment] [data-ui-role=input] {
   width: 100%;
 }
 
-[data-ui-role="floating-field"] > [data-ui-part="label"] {
+[data-ui-role=floating-field] > [data-ui-part=label] {
   grid-row: 1;
   grid-column: 1;
   z-index: 2;
@@ -48,50 +46,50 @@
 }
 
 /* Single-line controls — label rests centered in the control cell only */
-[data-ui-role="floating-field"] > [data-ui-role="input"]:placeholder-shown ~ [data-ui-part="label"],
-[data-ui-role="floating-field"] > [data-ui-part="input-adornment"]:has([data-ui-role="input"]:placeholder-shown) ~ [data-ui-part="label"] {
+[data-ui-role=floating-field] > [data-ui-role=input]:placeholder-shown ~ [data-ui-part=label],
+[data-ui-role=floating-field] > [data-ui-part=input-adornment]:has([data-ui-role=input]:placeholder-shown) ~ [data-ui-part=label] {
   align-self: center;
   transform: none;
 }
 
 /* Floated / filled */
-[data-ui-role="floating-field"] > [data-ui-role="input"]:focus ~ [data-ui-part="label"],
-[data-ui-role="floating-field"] > [data-ui-role="input"]:not(:placeholder-shown) ~ [data-ui-part="label"],
-[data-ui-role="floating-field"] > [data-ui-part="input-adornment"]:focus-within ~ [data-ui-part="label"],
-[data-ui-role="floating-field"] > [data-ui-part="input-adornment"]:has([data-ui-role="input"]:not(:placeholder-shown)) ~ [data-ui-part="label"] {
+[data-ui-role=floating-field] > [data-ui-role=input]:focus ~ [data-ui-part=label],
+[data-ui-role=floating-field] > [data-ui-role=input]:not(:placeholder-shown) ~ [data-ui-part=label],
+[data-ui-role=floating-field] > [data-ui-part=input-adornment]:focus-within ~ [data-ui-part=label],
+[data-ui-role=floating-field] > [data-ui-part=input-adornment]:has([data-ui-role=input]:not(:placeholder-shown)) ~ [data-ui-part=label] {
   align-self: start;
   margin-top: var(--ui-space-xs);
   transform: scale(0.85);
   opacity: 0.85;
 }
 
-[data-ui-role="floating-field"]:has(> [data-ui-role="input"]:focus) > [data-ui-role="input"],
-[data-ui-role="floating-field"]:has(> [data-ui-role="input"]:not(:placeholder-shown)) > [data-ui-role="input"],
-[data-ui-role="floating-field"]:has(> [data-ui-part="input-adornment"]:focus-within) > [data-ui-part="input-adornment"],
-[data-ui-role="floating-field"]:has(> [data-ui-part="input-adornment"]:has([data-ui-role="input"]:not(:placeholder-shown))) > [data-ui-part="input-adornment"] {
+[data-ui-role=floating-field]:has(> [data-ui-role=input]:focus) > [data-ui-role=input],
+[data-ui-role=floating-field]:has(> [data-ui-role=input]:not(:placeholder-shown)) > [data-ui-role=input],
+[data-ui-role=floating-field]:has(> [data-ui-part=input-adornment]:focus-within) > [data-ui-part=input-adornment],
+[data-ui-role=floating-field]:has(> [data-ui-part=input-adornment]:has([data-ui-role=input]:not(:placeholder-shown))) > [data-ui-part=input-adornment] {
   padding-block-start: calc(var(--ui-space-sm) + 0.625rem);
 }
 
 /* Textarea — label starts top-left; grows with rows */
-[data-ui-role="floating-field"] > [data-ui-role="textarea"] ~ [data-ui-part="label"] {
+[data-ui-role=floating-field] > [data-ui-role=textarea] ~ [data-ui-part=label] {
   align-self: start;
   margin-top: var(--ui-space-sm);
   transform: none;
 }
 
-[data-ui-role="floating-field"] > [data-ui-role="textarea"]:focus ~ [data-ui-part="label"],
-[data-ui-role="floating-field"] > [data-ui-role="textarea"]:not(:placeholder-shown) ~ [data-ui-part="label"] {
+[data-ui-role=floating-field] > [data-ui-role=textarea]:focus ~ [data-ui-part=label],
+[data-ui-role=floating-field] > [data-ui-role=textarea]:not(:placeholder-shown) ~ [data-ui-part=label] {
   margin-top: var(--ui-space-xs);
   transform: scale(0.85);
   opacity: 0.85;
 }
 
-[data-ui-role="floating-field"]:has(> [data-ui-role="textarea"]:focus) > [data-ui-role="textarea"],
-[data-ui-role="floating-field"]:has(> [data-ui-role="textarea"]:not(:placeholder-shown)) > [data-ui-role="textarea"] {
+[data-ui-role=floating-field]:has(> [data-ui-role=textarea]:focus) > [data-ui-role=textarea],
+[data-ui-role=floating-field]:has(> [data-ui-role=textarea]:not(:placeholder-shown)) > [data-ui-role=textarea] {
   padding-block-start: calc(var(--ui-space-sm) + 0.625rem);
 }
 
-[data-ui-role="floating-field"] [data-ui-part="footer"] {
+[data-ui-role=floating-field] [data-ui-part=footer] {
   grid-row: 2;
   grid-column: 1;
   margin: 0;
@@ -99,6 +97,6 @@
   color: var(--ui-color-text-muted);
 }
 
-[data-ui-role="floating-field"][data-ui-state="invalid"] [data-ui-part="footer"] {
+[data-ui-role=floating-field][data-ui-state=invalid] [data-ui-part=footer] {
   color: var(--ui-color-danger);
 }
