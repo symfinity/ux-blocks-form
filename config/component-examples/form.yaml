@@ -1,0 +1,11 @@
+role: form
+twig_name: Form
+examples:
+  - id: post
+    title: POST form
+    section: Examples
+    props:
+      method: "post"
+      action: "/save"
+      title: "Profile"
+    slot_text: ''

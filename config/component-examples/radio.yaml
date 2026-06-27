@@ -1,0 +1,11 @@
+role: radio
+twig_name: Radio
+examples:
+  - id: default
+    title: Single option
+    section: Examples
+    props:
+      name: "plan"
+      value: "pro"
+      label: "Pro"
+    slot_text: ''

@@ -90,8 +90,9 @@ See the [form-ui-extensions-bundle](https://github.com/symfinity/form-ui-extensi
 
 ## Next steps
 
-- [Components](components.md) — full role inventory
-- [Configuration](configuration.md) — optional `fragment_ids` setting
+- [Components](components.md) — handbook index
+- [Input](components/input.md) · [Field](components/field.md)
+- [Configuration](configuration.md)
 
 ## See also
 

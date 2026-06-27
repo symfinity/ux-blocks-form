@@ -1,0 +1,26 @@
+role: switch
+twig_name: Switch
+examples:
+  - id: default
+    title: Notifications
+    section: Examples
+    props:
+      name: alerts
+      label: Email alerts
+    slot_text: ''
+  - id: checked
+    title: Enabled
+    section: States
+    props:
+      name: dark_mode
+      label: Dark mode
+      checked: true
+    slot_text: ''
+  - id: disabled
+    title: Disabled
+    section: States
+    props:
+      name: beta
+      label: Beta features
+      disabled: true
+    slot_text: ''

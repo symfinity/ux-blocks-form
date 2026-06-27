@@ -1,0 +1,19 @@
+role: checkbox
+twig_name: Checkbox
+examples:
+  - id: control
+    title: Checkbox
+    section: Appearances
+    props:
+      name: "agree"
+      label: "I agree to the terms"
+    slot_text: ''
+  - id: button
+    title: Toggle button
+    section: Appearances
+    props:
+      name: "plan"
+      appearance: "button"
+      label: "Pro plan"
+      variant: "primary"
+    slot_text: ''

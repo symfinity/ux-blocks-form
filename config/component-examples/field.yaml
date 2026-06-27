@@ -1,0 +1,18 @@
+role: field
+twig_name: Field
+examples:
+  - id: default
+    title: With hint
+    section: Examples
+    props:
+      label: "Email"
+      hint: "We never share your email."
+    slot_text: ''
+  - id: error
+    title: With error
+    section: States
+    props:
+      label: "Email"
+      error: "Invalid email"
+      invalid: true
+    slot_text: ''

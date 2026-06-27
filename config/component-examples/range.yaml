@@ -1,0 +1,11 @@
+role: range
+twig_name: Range
+examples:
+  - id: default
+    title: Volume
+    section: Examples
+    props:
+      name: "volume"
+      min: 0
+      max: 100
+    slot_text: ''

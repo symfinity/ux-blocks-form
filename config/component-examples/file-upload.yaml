@@ -1,0 +1,9 @@
+role: file-upload
+twig_name: FileUpload
+examples:
+  - id: default
+    title: Document
+    section: Examples
+    props:
+      name: "document"
+    slot_text: ''

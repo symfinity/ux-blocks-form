@@ -1,0 +1,9 @@
+role: file-input
+twig_name: FileInput
+examples:
+  - id: default
+    title: Avatar upload
+    section: Examples
+    props:
+      name: "avatar"
+    slot_text: ''

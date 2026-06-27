@@ -87,6 +87,8 @@ composer require symfinity/ux-blocks-form
 
 Composer installs `symfinity/ux-blocks-core` and `symfinity/ux-blocks` automatically. The Flex recipe registers the bundle for all environments. See [Installation](docs/installation.md) for manual setup and verification.
 
+For the **complete official catalog**, use [`symfinity/ux-blocks-full`](https://github.com/symfinity/ux-blocks-full).
+
 Pair with `**symfinity/ui-kernel**` when you need theme CSS — see [Quick start](docs/quickstart.md).
 
 ## Quick Start

@@ -1,58 +1,34 @@
 # Components
 
-## Interaction profile
+Form controls and field compounds. Buttons: [ux-blocks-core](https://packagist.org/packages/symfinity/ux-blocks-core).
 
-| Token | Meaning in this package |
-|-------|-------------------------|
-| `nat` | Native HTML + ui-kernel / package CSS — default for every role |
-| `act` | Toggle-button labels and `InputGroup` use core `Button` chrome |
-| `stl` | Not in this package — see `symfinity/ux-blocks-extended` |
-| `live` | Not in this package — see LiveComponent tiers |
+## Handbook index
 
-Fragment prefix: **`blocks`** (example: `blocks.input`, `blocks.field`).
+| Component | Description |
+|-----------|-------------|
+| [Checkbox](components/checkbox.md) | Boolean choice or toggle-button style |
+| [Field](components/field.md) | Label, control, hint, and error compound |
+| [Fieldset](components/fieldset.md) | Grouped fields with legend |
+| [FileInput](components/file-input.md) | Native file picker |
+| [FileUpload](components/file-upload.md) | Button-triggered upload with filename display |
+| [FloatingField](components/floating-field.md) | Floating label wrapper for text controls |
+| [Form](components/form.md) | Form wrapper with title and method |
+| [FormActions](components/form-actions.md) | Submit and cancel button row |
+| [Input](components/input.md) | Single-line text field |
+| [InputGroup](components/input-group.md) | Input with leading/trailing addons |
+| [Label](components/label.md) | Accessible caption for a form control |
+| [Radio](components/radio.md) | Single radio option inside a group |
+| [RadioGroup](components/radio-group.md) | Single choice from a list |
+| [Range](components/range.md) | Numeric range slider |
+| [Select](components/select.md) | Native dropdown |
+| [Switch](components/switch.md) | On/off toggle |
+| [Textarea](components/textarea.md) | Multi-line text field |
 
-## Component index
-
-| Role | Twig | Interaction | Notes |
-|------|------|-------------|-------|
-| label | Label | nat | Associates with a control `for` id |
-| input | Input | nat | Text types, icons, temporal adornments |
-| textarea | Textarea | nat | Auto-grow where supported |
-| checkbox | Checkbox | nat | Optional `appearance="button"` |
-| radio | Radio | nat | Optional `appearance="button"` |
-| radio-group | RadioGroup | nat | Segmented toggle mode |
-| select | Select | nat | Placeholder, `multiple`, validation |
-| switch | Switch | nat | Custom toggle chrome |
-| file-input | FileInput | nat | Native file picker |
-| file-upload | FileUpload | nat | Button + filename readout |
-| input-group | InputGroup | nat | Composes core `Button` |
-| fieldset | Fieldset | nat | Optional `legend` |
-| field | Field | nat | Label, control slot, hint/error |
-| floating-field | FloatingField | nat | Floating label; not for `Select` |
-| range | Range | nat | Optional `showValue` readout |
-| form | Form | nat | Semantic form shell |
-| form-actions | FormActions | nat | Footer toolbar alignment |
-
-The README component table matches this inventory for each release.
-
-## Using components
-
-Twig tag name matches the **Twig** column (`<twig:Input>`, `<twig:Field>`, …). Nest controls inside compounds:
-
-```twig
-<twig:Field label="Email">
-    <twig:Input name="email" type="email" />
-</twig:Field>
-```
-
-`Button` and `ButtonGroup` remain in **`symfinity/ux-blocks-core`**.
 
 ## Related packages
 
-| Package | Role |
+| Package | Adds |
 |---------|------|
-| `symfinity/ux-blocks-core` | Buttons, typography, layout primitives |
-| `symfinity/ux-blocks-extended` | Dialogs, cards, tables |
-| `symfinity/form-ui-extensions-bundle` | Symfony Form `FormView` bridge |
+| [ux-blocks-core](https://packagist.org/packages/symfinity/ux-blocks-core) | Button, Typography, … |
+| [ux-blocks-extended](https://packagist.org/packages/symfinity/ux-blocks-extended) | Dialog, Card, … |
 
-See [Quick start](quickstart.md) for a minimal template.
