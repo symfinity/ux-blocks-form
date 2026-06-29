@@ -5,6 +5,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.2] - 2026-06-29
+
+### Added
+
+- **Handbook component pages** — seventeen per-role guides under `docs/components/` with props, examples, and cross-links from [components.md](docs/components.md)
+- **Component example manifests** — `config/component-examples/{role}.yaml` for symfinity-docs handbook SSR (grouped examples per role)
+- **ROADMAP.md** — public milestone table for the 0.1.x → 1.0.x release line
+- **SUPPORTERS.md** and Composer `funding` metadata for GitHub Sponsors
+- **`.github/FUNDING.yml`** — GitHub Sponsors link on the split mirror
+
+### Changed
+
+- **README** — links to `symfinity/ux-blocks-full` for the complete official catalog
+- **Handbook** — expanded [usage.md](docs/usage.md); quickstart support footer; components index cleanup
+- **Split mirror CI** — PHP 8.2–8.5 × Symfony 7.4, 8.0, and 8.1 with PHPUnit and PHPStan on every matrix cell
+- Packagist archives slimmed via `.gitattributes` `export-ignore` rules
+
+### Notes
+
+- No Twig component props or registry role ids changed — documentation and split-mirror hygiene patch after `v0.1.1`
+- Pair with `symfinity/ux-blocks-core` `^0.1` (or newer patch) when using refreshed core role CSS together
+
 ## [0.1.1] - 2026-06-25
 
 ### Changed

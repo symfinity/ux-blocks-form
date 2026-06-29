@@ -31,6 +31,16 @@ After upgrade:
 1. Clear Symfony cache and hard-refresh AssetMapper CSS in dev.
 2. Re-check toggle-button, switch, and floating-field layouts if you use visual regression tests.
 
+## 0.1.2
+
+Documentation and split-mirror hygiene patch after [v0.1.1](https://github.com/symfinity/ux-blocks-form/releases/tag/v0.1.1). Handbook component pages, symfinity-docs example manifests, ROADMAP, and sponsor metadata — no component API changes.
+
+```bash
+composer update symfinity/ux-blocks-form
+```
+
+No migration steps. Optional: browse per-role guides under [docs/components/](components.md) or pair with `symfinity/symfinity-docs` for rendered handbook pages.
+
 ## Future releases
 
 See [CHANGELOG](https://github.com/symfinity/ux-blocks-form/blob/main/CHANGELOG.md) for version-to-version notes.
