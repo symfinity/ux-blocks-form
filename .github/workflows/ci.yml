@@ -45,10 +45,10 @@ jobs:
             composer config "repositories.symfinity-${repo}" "{\"type\":\"vcs\",\"url\":\"https://github.com/symfinity/${repo}\"}"
           done
           composer require --no-update \
-            'symfinity/ux-blocks:dev-main' \
-            'symfinity/ux-blocks-core:dev-main' \
+            'symfinity/ux-blocks:^0.1' \
+            'symfinity/ux-blocks-core:^0.1' \
             'symfinity/ui-kernel:^0.1' \
-            'symfinity/ui-action:dev-main'
+            'symfinity/ui-action:^0.1'
 
       - name: Pin Symfony ${{ matrix.symfony }}
         run: |
