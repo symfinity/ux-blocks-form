@@ -1,9 +1,0 @@
-role: form-actions
-twig_name: FormActions
-examples:
-  - id: end
-    title: End aligned
-    section: Examples
-    props:
-      align: "end"
-    slot_text: ''

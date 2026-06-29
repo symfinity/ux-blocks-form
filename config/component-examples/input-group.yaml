@@ -1,8 +1,0 @@
-role: input-group
-twig_name: InputGroup
-examples:
-  - id: default
-    title: With addon
-    section: Examples
-    props: {}
-    slot_text: ''

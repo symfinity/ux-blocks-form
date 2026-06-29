@@ -1,8 +1,0 @@
-role: fieldset
-twig_name: Fieldset
-examples:
-  - id: default
-    title: Address group
-    section: Examples
-    props: {}
-    slot_text: ''

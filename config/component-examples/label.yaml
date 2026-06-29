@@ -1,9 +1,0 @@
-role: label
-twig_name: Label
-examples:
-  - id: default
-    title: Field label
-    section: Examples
-    props:
-      for: "email"
-    slot_text: "Email address"
