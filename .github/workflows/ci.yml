@@ -47,7 +47,7 @@ jobs:
           composer require --no-update \
             'symfinity/ux-blocks:^0.1' \
             'symfinity/ux-blocks-core:^0.1' \
-            'symfinity/ui-kernel:^0.1' \
+            'symfinity/ui-kernel:^0.2' \
             'symfinity/ui-action:^0.1'
 
       - name: Pin Symfony ${{ matrix.symfony }}
