@@ -1,6 +1,7 @@
 name: CI
 
 # Matrix: maintained PHP x maintained Symfony (floor 7.4.*).
+# Tier B — runtime symfinity/* from Packagist (^0.1); no VCS repository overrides.
 # Regenerated 2026-06-22 — refresh: split-mirror-docs/scripts/fetch-ci-matrix.sh --gha-json --package-php='>=8.2' --symfony-floor=7.4
 
 on:
@@ -37,18 +38,6 @@ jobs:
           extensions: mbstring, xml, ctype, iconv, intl, curl
           coverage: none
           tools: composer:v2
-
-      # Packagist v0.1.0 of ux-blocks-core/ui-kernel predates form-tier APIs — resolve siblings from mirrors until tags catch up.
-      - name: Resolve Symfinity siblings from GitHub mirrors
-        run: |
-          for repo in ux-blocks ux-blocks-core ui-kernel ui-action; do
-            composer config "repositories.symfinity-${repo}" "{\"type\":\"vcs\",\"url\":\"https://github.com/symfinity/${repo}\"}"
-          done
-          composer require --no-update \
-            'symfinity/ux-blocks:^0.1' \
-            'symfinity/ux-blocks-core:^0.1' \
-            'symfinity/ui-kernel:^0.2' \
-            'symfinity/ui-action:^0.1'
 
       - name: Pin Symfony ${{ matrix.symfony }}
         run: |
