@@ -15,12 +15,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - **Grouped component examples** — all seventeen `config/component-examples/*.yaml` manifests use `groups[]` with `slot_twig` for symfinity-docs handbook SSR
-- **Role CSS cascade** — committed `blocks-form.css` and `BlocksFormCssProvider::stylesheet()` wrap tier output in `@layer blocks.form` for ui-kernel layer ordering
+- **Role CSS cascade** — committed `blocks-form.css` and `BlocksFormCssProvider::stylesheet()` wrap tier output in `@layer blocks.form` via local `TierCascadeLayerWrap` (no ui-kernel runtime dependency)
 - **PHPUnit bootstrap** — `tests/bootstrap.php` resolves monorepo or split-mirror Composer autoload; optional `tests/bootstrap.local.php` hook
 
 ### Fixed
 
-- **OptionalUxIconExtension** — return `UXIconRuntime::renderIcon()` result directly when `symfony/ux-icons` is installed
+- **OptionalUxIconExtension** — normalize `UXIconRuntime::renderIcon()` to string for PHPStan and split-mirror CI
 
 ### Notes
 
