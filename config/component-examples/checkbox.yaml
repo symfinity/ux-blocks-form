@@ -1,19 +1,25 @@
 role: checkbox
 twig_name: Checkbox
-examples:
-  - id: control
-    title: Checkbox
+groups:
+  - id: appearances
     section: Appearances
-    props:
-      name: "agree"
-      label: "I agree to the terms"
-    slot_text: ''
-  - id: button
-    title: Toggle button
-    section: Appearances
-    props:
-      name: "plan"
-      appearance: "button"
-      label: "Pro plan"
-      variant: "primary"
-    slot_text: ''
+    layout: inline-row
+    items:
+      - id: control
+        label: Checkbox
+        props:
+          label: "I agree to the terms"
+          name: agree
+        slot_twig: |
+          <twig:Label for="demo-check">{{ lorem_sentence() }}</twig:Label>
+          <twig:Checkbox id="demo-check" name="accept" />
+      - id: button
+        label: "Toggle button"
+        props:
+          appearance: button
+          label: "Pro plan"
+          name: plan
+          variant: primary
+        slot_twig: |
+          <twig:Label for="demo-check">{{ lorem_sentence() }}</twig:Label>
+          <twig:Checkbox id="demo-check" name="accept" />

@@ -1,28 +1,30 @@
 role: input
 twig_name: Input
-examples:
-  - id: email
-    title: Email field
+groups:
+  - id: examples
     section: Examples
-    props:
-      name: email
-      type: email
-      placeholder: you@example.com
-    slot_text: ''
-  - id: search
-    title: Search
-    section: Examples
-    props:
-      name: q
-      type: search
-      placeholder: Search docs…
-    slot_text: ''
-  - id: invalid
-    title: Invalid
+    layout: inline-row
+    items:
+      - id: email
+        label: "Email field"
+        props:
+          name: email
+          placeholder: you@example.com
+          type: email
+      - id: search
+        label: Search
+        props:
+          name: q
+          placeholder: "Search docs…"
+          type: search
+  - id: states
     section: States
-    props:
-      name: email
-      type: email
-      invalid: true
-      placeholder: you@example.com
-    slot_text: ''
+    layout: inline-row
+    items:
+      - id: invalid
+        label: Invalid
+        props:
+          invalid: true
+          name: email
+          placeholder: you@example.com
+          type: email

@@ -1,3 +1,4 @@
+@layer blocks.form {
 /* symfinity/ux-blocks-form — role CSS (110) */
 @import url('roles/_bundle.css');
 @import url('roles/checkbox.css');
@@ -14,3 +15,4 @@
 @import url('roles/input-type-variants.css');
 @import url('roles/form.css');
 @import url('roles/file-upload.css');
+}

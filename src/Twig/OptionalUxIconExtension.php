@@ -36,9 +36,7 @@ final class OptionalUxIconExtension extends AbstractExtension
         }
 
         if (class_exists(\Symfony\UX\Icons\Twig\UXIconRuntime::class)) {
-            $result = $env->getRuntime(\Symfony\UX\Icons\Twig\UXIconRuntime::class)->renderIcon($name);
-
-            return \is_string($result) ? $result : '';
+            return $env->getRuntime(\Symfony\UX\Icons\Twig\UXIconRuntime::class)->renderIcon($name);
         }
 
         return trim($env->createTemplate('{% apply spaceless %}{{ ux_icon(icon) }}{% endapply %}')->render([

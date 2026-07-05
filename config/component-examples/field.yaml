@@ -1,18 +1,25 @@
 role: field
 twig_name: Field
-examples:
-  - id: default
-    title: With hint
+groups:
+  - id: examples
     section: Examples
-    props:
-      label: "Email"
-      hint: "We never share your email."
-    slot_text: ''
-  - id: error
-    title: With error
+    layout: stack
+    items:
+      - id: default
+        label: "With hint"
+        props: {}
+        slot_twig: |
+          <twig:Field label="{{ lorem_words(1)|capitalize }}" hint="{{ lorem_sentence() }}">
+              <twig:Input name="demo" placeholder="{{ lorem_words(2) }}" />
+          </twig:Field>
+  - id: states
     section: States
-    props:
-      label: "Email"
-      error: "Invalid email"
-      invalid: true
-    slot_text: ''
+    layout: stack
+    items:
+      - id: error
+        label: "With error"
+        props: {}
+        slot_twig: |
+          <twig:Field label="{{ lorem_words(1)|capitalize }}" hint="{{ lorem_sentence() }}">
+              <twig:Input name="demo" placeholder="{{ lorem_words(2) }}" />
+          </twig:Field>

@@ -41,6 +41,20 @@ composer update symfinity/ux-blocks-form
 
 No migration steps. Optional: browse per-role guides under [docs/components/](components.md) or pair with `symfinity/symfinity-docs` for rendered handbook pages.
 
+## 0.1.3
+
+OOTB handbook and CSS cascade hygiene after [v0.1.2](https://github.com/symfinity/ux-blocks-form/releases/tag/v0.1.2). Grouped component example manifests, `@layer blocks.form` tier CSS, verification page, and PHPUnit bootstrap cleanup — no component props or registry ids changed.
+
+```bash
+composer update symfinity/ux-blocks-form symfinity/ux-blocks-core
+```
+
+After upgrade:
+
+1. Clear Symfony cache and hard-refresh the browser if AssetMapper serves cached CSS in dev.
+2. Pair with `symfinity/ux-blocks-core` **^0.1.6** so form fragments get auto-injected inline tier CSS (`id="ux-blocks-form-css"`).
+3. Optional: run the [verification](verification.md) clean-app smoke if you embed form components without ui-kernel.
+
 ## Future releases
 
 See [CHANGELOG](https://github.com/symfinity/ux-blocks-form/blob/main/CHANGELOG.md) for version-to-version notes.

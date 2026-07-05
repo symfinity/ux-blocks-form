@@ -1,26 +1,37 @@
 role: switch
 twig_name: Switch
-examples:
-  - id: default
-    title: Notifications
+groups:
+  - id: examples
     section: Examples
-    props:
-      name: alerts
-      label: Email alerts
-    slot_text: ''
-  - id: checked
-    title: Enabled
+    layout: inline-row
+    items:
+      - id: default
+        label: Notifications
+        props:
+          id: demo-switch-default
+          name: alerts
+        slot_twig: |
+          <twig:Label for="demo-switch-default">{{ lorem_words(2)|capitalize }}</twig:Label>
+          <twig:Switch id="demo-switch-default" name="alerts" />
+  - id: states
     section: States
-    props:
-      name: dark_mode
-      label: Dark mode
-      checked: true
-    slot_text: ''
-  - id: disabled
-    title: Disabled
-    section: States
-    props:
-      name: beta
-      label: Beta features
-      disabled: true
-    slot_text: ''
+    layout: inline-row
+    items:
+      - id: checked
+        label: Enabled
+        props:
+          checked: true
+          id: demo-switch-checked
+          name: dark_mode
+        slot_twig: |
+          <twig:Label for="demo-switch-checked">{{ lorem_words(2)|capitalize }}</twig:Label>
+          <twig:Switch id="demo-switch-checked" name="dark_mode" checked />
+      - id: disabled
+        label: Disabled
+        props:
+          disabled: true
+          id: demo-switch-disabled
+          name: beta
+        slot_twig: |
+          <twig:Label for="demo-switch-disabled">{{ lorem_words(2)|capitalize }}</twig:Label>
+          <twig:Switch id="demo-switch-disabled" name="beta" disabled />

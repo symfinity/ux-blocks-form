@@ -1,11 +1,16 @@
 role: radio
 twig_name: Radio
-examples:
-  - id: default
-    title: Single option
+groups:
+  - id: examples
     section: Examples
-    props:
-      name: "plan"
-      value: "pro"
-      label: "Pro"
-    slot_text: ''
+    layout: inline-row
+    items:
+      - id: default
+        label: "Single option"
+        props:
+          label: Pro
+          name: plan
+          value: pro
+        slot_twig: |
+          <twig:Label for="demo-radio">{{ lorem_words(1)|capitalize }}</twig:Label>
+          <twig:Radio id="demo-radio" name="plan" value="monthly" />

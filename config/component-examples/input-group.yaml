@@ -1,8 +1,15 @@
 role: input-group
 twig_name: InputGroup
-examples:
-  - id: default
-    title: With addon
+groups:
+  - id: examples
     section: Examples
-    props: {}
-    slot_text: ''
+    layout: stack
+    items:
+      - id: default
+        label: "With addon"
+        props: {}
+        slot_twig: |
+          <twig:InputGroup>
+              <twig:Input name="q" placeholder="{{ lorem_words(2) }}" />
+              <twig:Button variant="primary">{{ lorem_words(1)|capitalize }}</twig:Button>
+          </twig:InputGroup>

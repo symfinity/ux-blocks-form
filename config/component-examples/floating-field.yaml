@@ -1,16 +1,21 @@
 role: floating-field
 twig_name: FloatingField
-examples:
-  - id: email
-    title: Email
+groups:
+  - id: examples
     section: Examples
-    props:
-      label: Email
-    slot_text: ''
-  - id: with-hint
-    title: With hint
-    section: Examples
-    props:
-      label: Username
-      hint: Letters and numbers only
-    slot_text: ''
+    layout: stack
+    items:
+      - id: email
+        label: Email
+        props: {}
+        slot_twig: |
+          <twig:FloatingField label="{{ lorem_words(1)|capitalize }}">
+              <twig:Input type="email" name="email" placeholder="you@example.com" />
+          </twig:FloatingField>
+      - id: with-hint
+        label: "With hint"
+        props: {}
+        slot_twig: |
+          <twig:FloatingField label="{{ lorem_words(1)|capitalize }}" hint="{{ lorem_sentence() }}">
+              <twig:Input name="username" placeholder="{{ lorem_words(2) }}" />
+          </twig:FloatingField>

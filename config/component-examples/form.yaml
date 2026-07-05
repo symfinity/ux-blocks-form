@@ -1,11 +1,19 @@
 role: form
 twig_name: Form
-examples:
-  - id: post
-    title: POST form
+groups:
+  - id: examples
     section: Examples
-    props:
-      method: "post"
-      action: "/save"
-      title: "Profile"
-    slot_text: ''
+    layout: stack
+    items:
+      - id: post
+        label: "POST form"
+        props: {}
+        slot_twig: |
+          <twig:Form method="post" action="/save" title="Profile">
+              <twig:Field label="{{ lorem_words(1)|capitalize }}">
+                  <twig:Input name="name" placeholder="{{ lorem_words(2) }}" />
+              </twig:Field>
+              <twig:FormActions>
+                  <twig:Button type="submit" variant="primary">{{ lorem_words(1)|capitalize }}</twig:Button>
+              </twig:FormActions>
+          </twig:Form>

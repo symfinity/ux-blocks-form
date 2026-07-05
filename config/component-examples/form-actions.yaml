@@ -1,9 +1,15 @@
 role: form-actions
 twig_name: FormActions
-examples:
-  - id: end
-    title: End aligned
+groups:
+  - id: examples
     section: Examples
-    props:
-      align: "end"
-    slot_text: ''
+    layout: stack
+    items:
+      - id: end
+        label: "End aligned"
+        props: {}
+        slot_twig: |
+          <twig:FormActions>
+              <twig:Button type="submit" variant="primary">{{ lorem_words(1)|capitalize }}</twig:Button>
+              <twig:Button type="button" variant="outline">{{ lorem_words(1)|capitalize }}</twig:Button>
+          </twig:FormActions>
