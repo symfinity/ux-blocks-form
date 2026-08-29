@@ -1,0 +1,54 @@
+@use '../_shared/mixins' as mixins;
+
+[data-ui-role='input-group'] {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  gap: 0;
+  width: 100%;
+  max-width: 100%;
+  font-family: var(--ui-font-family-sans);
+  vertical-align: middle;
+
+  > [data-ui-role='input'],
+  > [data-ui-role='select'],
+  > [data-ui-role='textarea'],
+  > [data-ui-role='file-input'] {
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+  }
+
+  > [data-ui-role='button'] {
+    position: relative;
+    flex: 0 1 auto;
+  }
+
+  > :not(:first-child) {
+    margin-inline-start: -1px;
+    border-start-start-radius: 0;
+    border-end-start-radius: 0;
+  }
+
+  > :not(:last-child) {
+    border-start-end-radius: 0;
+    border-end-end-radius: 0;
+  }
+
+  > :hover,
+  > :focus-visible {
+    z-index: 1;
+  }
+
+  &:has(:invalid) [data-ui-role='input'],
+  &:has(:user-invalid) [data-ui-role='input'] {
+    border-color: var(--ui-color-danger);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--ui-color-danger) 35%, transparent);
+  }
+
+  &:has(:focus-visible) [data-ui-role='input'] {
+    outline: 0;
+    border-color: var(--ui-color-focus);
+    @include mixins.focus-ring-default;
+  }
+}

@@ -1,0 +1,16 @@
+role: fieldset
+twig_name: Fieldset
+groups:
+  - id: examples
+    section: Examples
+    layout: stack
+    items:
+      - id: default
+        label: "Address group"
+        props: {}
+        slot_twig: |
+          <twig:Fieldset legend="{{ lorem_title() }}">
+              <twig:Field label="{{ lorem_words(1)|capitalize }}">
+                  <twig:Input name="a" />
+              </twig:Field>
+          </twig:Fieldset>

@@ -1,0 +1,48 @@
+@use '../_shared/mixins' as mixins;
+
+/* Dedicated native input type chrome — still single Input role; type selectors only */
+[data-ui-role='input'][type='search'] {
+  -webkit-appearance: none;
+  appearance: none;
+
+  &::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 1rem;
+    width: 1rem;
+    margin-inline-end: var(--ui-space-xs);
+    background: color-mix(in srgb, var(--ui-color-text-muted) 55%, transparent);
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2'%3E%3Cpath d='M18 6 6 18M6 6l12 12'/%3E%3C/svg%3E")
+      center / contain no-repeat;
+    cursor: pointer;
+  }
+}
+
+[data-ui-role='input'][type='color'] {
+  min-height: 2.5rem;
+  padding: var(--ui-space-xs);
+  cursor: pointer;
+
+  &::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+
+  &::-webkit-color-swatch {
+    border: 1px solid var(--ui-color-border);
+    border-radius: calc(var(--ui-radius-sm) - 2px);
+  }
+}
+
+@include mixins.each-temporal-input-base {
+  min-height: 2.5rem;
+  color-scheme: light dark;
+}
+
+@include mixins.each-temporal-picker-indicator {
+  cursor: pointer;
+  opacity: 0.72;
+}
+
+@include mixins.each-temporal-focus-indicator {
+  opacity: 1;
+}

@@ -1,0 +1,15 @@
+role: radio-group
+twig_name: RadioGroup
+groups:
+  - id: examples
+    section: Examples
+    layout: inline-row
+    items:
+      - id: default
+        label: "Plan choice"
+        props: {}
+        slot_twig: |
+          <twig:RadioGroup name="billing">
+              <twig:RadioGroup:Item name="billing" value="monthly" checked>{{ lorem_words(1)|capitalize }}</twig:RadioGroup:Item>
+              <twig:RadioGroup:Item name="billing" value="annual">{{ lorem_words(1)|capitalize }}</twig:RadioGroup:Item>
+          </twig:RadioGroup>

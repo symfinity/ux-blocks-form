@@ -1,0 +1,13 @@
+<div
+    {% if is_segmented_button_group %}
+        data-ui-role="button-group"
+        role="radiogroup"
+        {% if ariaLabel %}aria-label="{{ ariaLabel }}"{% endif %}
+    {% else %}
+        role="radiogroup"
+        {% if orientation == 'horizontal' %}data-ui-orientation="horizontal"{% endif %}
+    {% endif %}
+    {{ attributes }}
+>
+    {% block content %}{% endblock %}
+</div>

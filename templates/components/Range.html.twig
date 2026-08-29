@@ -1,0 +1,32 @@
+{% if showValue %}
+<div data-ui-part="range-field">
+    {% if label %}
+    <label for="{{ id }}">{{ label }}</label>
+    {% endif %}
+    <div data-ui-part="range-control">
+        <input
+            type="range"
+            id="{{ id }}"
+            data-ui-variant="{{ semantic_variant }}"
+            {% if value is not null %}value="{{ value }}"{% endif %}
+            {% if min is not null %}min="{{ min }}"{% endif %}
+            {% if max is not null %}max="{{ max }}"{% endif %}
+            {% if step is not null %}step="{{ step }}"{% endif %}
+            {% if disabled %}disabled data-ui-state="disabled"{% endif %}
+            {{ attributes }}
+        />
+        <output data-ui-part="value-readout" for="{{ id }}">{{ value ?? min ?? 0 }}</output>
+    </div>
+</div>
+{% else %}
+<input
+    type="range"
+    data-ui-variant="{{ semantic_variant }}"
+    {% if value is not null %}value="{{ value }}"{% endif %}
+    {% if min is not null %}min="{{ min }}"{% endif %}
+    {% if max is not null %}max="{{ max }}"{% endif %}
+    {% if step is not null %}step="{{ step }}"{% endif %}
+    {% if disabled %}disabled data-ui-state="disabled"{% endif %}
+    {{ attributes }}
+/>
+{% endif %}

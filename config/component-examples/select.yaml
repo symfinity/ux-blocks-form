@@ -1,0 +1,27 @@
+role: select
+twig_name: Select
+groups:
+  - id: examples
+    section: Examples
+    layout: inline-row
+    items:
+      - id: default
+        label: Country
+        props:
+          name: country
+        slot_twig: |
+          <option value="">Choose…</option>
+          <option value="de">Germany</option>
+          <option value="at">Austria</option>
+  - id: states
+    section: States
+    layout: inline-row
+    items:
+      - id: invalid
+        label: Invalid
+        props:
+          invalid: true
+          name: country
+        slot_twig: |
+          <option value="">Choose…</option>
+          <option value="de">Germany</option>

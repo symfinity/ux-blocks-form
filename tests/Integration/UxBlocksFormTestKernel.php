@@ -1,0 +1,102 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Symfinity\UxBlocksForm\Tests\Integration;
+
+use Symfinity\UiKernel\UiKernelBundle;
+use Symfinity\UxBlocksCore\SymfinityUxBlocksCoreBundle;
+use Symfinity\UxBlocksForm\SymfinityUxBlocksFormBundle;
+use Symfinity\UxBlocksForm\Twig\OptionalUxIconExtension;
+use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
+use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
+use Symfony\Bundle\TwigBundle\TwigBundle;
+use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Symfony\Component\HttpKernel\Kernel;
+use Symfony\UX\StimulusBundle\StimulusBundle;
+use Symfony\UX\TwigComponent\TwigComponentBundle;
+
+final class UxBlocksFormTestKernel extends Kernel
+{
+    use MicroKernelTrait;
+
+    public function getProjectDir(): string
+    {
+        return \dirname(__DIR__, 2);
+    }
+
+    public function getCacheDir(): string
+    {
+        $fragmentFlag = $_SERVER['UX_BLOCKS_TEST_FRAGMENT_IDS'] ?? 'false';
+
+        return $this->getProjectDir() . '/var/cache/' . $this->environment . '_frag_' . $fragmentFlag;
+    }
+
+    public function registerBundles(): array
+    {
+        return [
+            new FrameworkBundle(),
+            new TwigBundle(),
+            new StimulusBundle(),
+            new TwigComponentBundle(),
+            new UiKernelBundle(),
+            new SymfinityUxBlocksCoreBundle(),
+            new SymfinityUxBlocksFormBundle(),
+        ];
+    }
+
+    protected function configureContainer(ContainerConfigurator $container): void
+    {
+        $fragmentIds = filter_var($_SERVER['UX_BLOCKS_TEST_FRAGMENT_IDS'] ?? 'false', FILTER_VALIDATE_BOOL);
+
+        $container->extension('symfinity_ux_blocks_core', [
+            'fragment_ids' => $fragmentIds,
+        ]);
+
+        $container->extension('symfinity_ux_blocks_form', [
+            'fragment_ids' => $fragmentIds,
+        ]);
+
+        $container->extension('symfinity_ui_kernel', [
+            'schema_version' => '1.0',
+            'default_theme' => 'default',
+            'default_variant' => 'default',
+        ]);
+
+        $container->extension('framework', [
+            'secret' => 'test-secret',
+            'test' => true,
+            'router' => ['utf8' => true],
+            'php_errors' => ['log' => false],
+            'form' => ['enabled' => true],
+            'validation' => ['enabled' => true],
+            'session' => [
+                'storage_factory_id' => 'session.storage.factory.mock_file',
+            ],
+        ]);
+
+        $container->extension('twig_component', [
+            'anonymous_template_directory' => 'components',
+            'defaults' => [
+                'Symfinity\\UxBlocksCore\\Twig\\Components\\' => 'components',
+                'Symfinity\\UxBlocksForm\\Twig\\Components\\' => 'components',
+            ],
+        ]);
+
+        $container->extension('twig', [
+            'form_themes' => [],
+        ]);
+
+        $container->services()
+            ->set('twig.extension.form', StubFormTwigExtension::class)
+            ->tag('twig.extension')
+            ->public();
+
+        if (!class_exists(\Symfinity\UxBlocksCore\Twig\OptionalUxIconExtension::class)) {
+            $container->services()
+                ->set(OptionalUxIconExtension::class)
+                ->tag('twig.extension')
+                ->public();
+        }
+    }
+}

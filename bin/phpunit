@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+pkg_root="$(cd "$(dirname "$0")/.." && pwd)"
+monorepo_root="$(cd "${pkg_root}/../.." && pwd)"
+
+if [[ -f "${monorepo_root}/mono.json" && -f "${monorepo_root}/vendor/bin/phpunit" ]]; then
+    exec "${monorepo_root}/vendor/bin/phpunit" -c "${pkg_root}/phpunit.xml.dist" "$@"
+fi
+
+if [[ ! -f "${pkg_root}/vendor/bin/phpunit" ]]; then
+    echo "Package vendor missing — run composer install in ${pkg_root} or use the symfinity monorepo." >&2
+    exit 1
+fi
+
+exec "${pkg_root}/vendor/bin/phpunit" "$@"

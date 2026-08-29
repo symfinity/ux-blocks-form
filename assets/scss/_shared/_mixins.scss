@@ -1,0 +1,114 @@
+@use 'lists' as *;
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@mixin focus-ring-default {
+  outline: 0;
+  box-shadow: 0 0 var(--ui-focus-ring-blur) var(--ui-focus-ring-width)
+    color-mix(in srgb, var(--ui-color-focus) calc(var(--ui-focus-ring-opacity) * 100%), transparent);
+}
+
+@mixin disabled-shell {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+@mixin icon-slot-inline($size: 1em) {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+
+  svg {
+    display: block;
+    width: $size;
+    height: $size;
+  }
+}
+
+@mixin each-range-fill {
+  @each $colour in $ui-range-fill-colours {
+    &[data-ui-variant='#{$colour}'] {
+      --ui-range-fill: var(--ui-color-#{$colour});
+    }
+  }
+}
+
+@mixin each-toggle-outline-checked {
+  @each $colour in $ui-semantic-colours {
+    [data-ui-appearance='button']:checked + [data-ui-role='button'][data-ui-variant='#{$colour}'][data-ui-appearance='outline'] {
+      @if $colour == ghost {
+        background: var(--ui-color-text-muted);
+        color: var(--ui-color-surface);
+        border-color: var(--ui-color-text-muted);
+      } @else {
+        background: var(--ui-color-#{$colour});
+        color: var(--ui-color-on-#{$colour});
+        border-color: var(--ui-color-#{$colour});
+      }
+    }
+  }
+}
+
+@mixin each-toggle-solid-unchecked {
+  @each $colour in $ui-semantic-colours {
+    [data-ui-appearance='button']:not(:checked):not(:disabled) + [data-ui-role='button'][data-ui-variant='#{$colour}'][data-ui-appearance='solid'],
+    [data-ui-appearance='button']:not(:checked):not(:disabled) + [data-ui-role='button'][data-ui-variant='#{$colour}']:not([data-ui-appearance]) {
+      @if $colour == ghost {
+        background: transparent;
+        color: var(--ui-color-text-muted);
+        border-color: var(--ui-color-border);
+      } @else {
+        background: transparent;
+        color: var(--ui-color-#{$colour});
+        border-color: var(--ui-color-#{$colour});
+      }
+    }
+  }
+}
+
+@mixin each-temporal-input-base {
+  @each $type in $ui-temporal-input-types {
+    [data-ui-role='input'][type='#{$type}'] {
+      @content;
+    }
+  }
+}
+
+@mixin each-temporal-picker-indicator {
+  @each $type in $ui-temporal-input-types {
+    [data-ui-role='input'][type='#{$type}']::-webkit-calendar-picker-indicator {
+      @content;
+    }
+  }
+}
+
+@mixin each-temporal-focus-indicator {
+  @each $type in datetime-local, date, time {
+    [data-ui-role='input'][type='#{$type}']:focus-visible::-webkit-calendar-picker-indicator {
+      @content;
+    }
+  }
+}
+
+@mixin each-radio-input-toggle-accent() {
+  @each $colour in $ui-semantic-colours {
+    [data-ui-role='radio'] > input[type='radio'][data-ui-variant='#{$colour}'],
+    [data-ui-role='radio-group-item'] input[data-ui-role='radio'][data-ui-variant='#{$colour}'],
+    input[data-ui-role='radio'][data-ui-variant='#{$colour}'] {
+      --ui-toggle-accent: var(--ui-color-#{$colour});
+    }
+  }
+}

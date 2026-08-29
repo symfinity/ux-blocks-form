@@ -1,0 +1,12 @@
+role: file-upload
+twig_name: FileUpload
+groups:
+  - id: examples
+    section: Examples
+    layout: stack
+    items:
+      - id: default
+        label: Document
+        props: {}
+        slot_twig: |
+          <twig:FileUpload name="assets" label="{{ lorem_words(2)|capitalize }}" />
