@@ -55,6 +55,20 @@ After upgrade:
 2. Pair with `symfinity/ux-blocks-core` **^0.1.6** so form fragments get auto-injected inline tier CSS (`id="ux-blocks-form-css"`).
 3. Optional: run the [verification](verification.md) clean-app smoke if you embed form components without ui-kernel.
 
+## 0.1.4
+
+Component docs ship in the Composer archive. Role stylesheets quote attribute values; the selectors match the same elements.
+
+Extra attributes on Input are rendered before the component's own variant, value, placeholder, state, and `type`.
+
+Dev installs require `symfinity/ui-kernel` `^0.3`. Runtime requirements are unchanged.
+
+```bash
+composer update symfinity/ux-blocks-form
+```
+
+No config or template changes are required after upgrade.
+
 ## Future releases
 
 See [CHANGELOG](https://github.com/symfinity/ux-blocks-form/blob/main/CHANGELOG.md) for version-to-version notes.
