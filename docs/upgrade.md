@@ -69,6 +69,14 @@ composer update symfinity/ux-blocks-form
 
 No config or template changes are required after upgrade.
 
+## 0.1.5
+
+The package Sass build keeps quoted attribute selectors. Shipped role CSS is unchanged from 0.1.4. No config or template changes.
+
+```bash
+composer update symfinity/ux-blocks-form
+```
+
 ## Future releases
 
 See [CHANGELOG](https://github.com/symfinity/ux-blocks-form/blob/main/CHANGELOG.md) for version-to-version notes.
